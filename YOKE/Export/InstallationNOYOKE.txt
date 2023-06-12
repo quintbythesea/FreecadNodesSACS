@@ -1,0 +1,1105 @@
+LDOPT       FL+Z1.0250007.850000-2000.001300.000GLOBMN                NPNP      
+OPTIONS      MN       SDUCJT 4 2   DC  A      PT          PT      SK            
+SECT
+SECT 114X11    TUB                               11.4301.113
+SECT 114X13    TUB                               11.4301.349
+SECT 114X17    TUB                               11.4301.712
+SECT 114X20    TUB                               11.4302.000
+SECT 114X25    TUB                               11.4302.540
+SECT 114X6     TUB                               11.4300.602
+SECT 114X8     TUB                               11.4300.856
+SECT 141X12    TUB                               14.1301.270
+SECT 141X15    TUB                               14.1301.588
+SECT 141X19    TUB                               14.1301.905
+SECT 141X6     TUB                               14.1300.655
+SECT 141X9     TUB                               14.1300.953
+SECT 168X10    TUB                               16.8301.097
+SECT 168X12    TUB                               16.8301.270
+SECT 168X14    TUB                               16.8301.427
+SECT 168X18    TUB                               16.8301.826
+SECT 168X21    TUB                               16.8302.195
+SECT 168X25    TUB                               16.8302.540
+SECT 168X28    TUB                               16.8302.800
+SECT 168X31    TUB                               16.8303.175
+SECT 168X7     TUB                               16.8300.711
+SECT 168X9     TUB                               16.8300.953
+SECT YOKEPL    PLG                               36.0005.00019.0004.000
+SECT 219X10    TUB                               21.9101.031
+SECT 219X12    TUB                               21.9101.270
+SECT 219X15    TUB                               21.9101.588
+SECT 219X19    TUB                               21.9101.905
+SECT 219X23    TUB                               21.9102.301
+SECT 219X25    TUB                               21.9102.540
+SECT 219X28    TUB                               21.9102.800
+SECT 219X31    TUB                               21.9103.175
+SECT 219X38    TUB                               21.9103.810
+SECT 219X6     TUB                               21.9100.635
+SECT 219X8     TUB                               21.9100.818
+SECT 273X12    TUB                               27.3001.270
+SECT 273X15    TUB                               27.3001.509
+*SECT 273X15    TUB                                 27.31.588                                                           
+SECT 273X19    TUB                               27.3001.905
+SECT 273X21    TUB                               27.3002.144
+SECT 273X25    TUB                               27.3002.540
+SECT 273X28    TUB                               27.3002.858
+SECT 273X31    TUB                               27.3003.175
+SECT 273X38    TUB                               27.3003.810
+SECT 273X50    TUB                               27.3005.080
+SECT 273X6     TUB                               27.3000.635
+SECT 273X9     TUB                               27.3000.927
+***PIPING                                                                                                               
+SECT 306X23    TUB                               30.6602.330
+SECT 323X10    TUB                               32.3801.031
+SECT 323X12    TUB                               32.3801.270
+SECT 323X14    TUB                               32.3801.427
+SECT 323X15    TUB                               32.3801.588
+SECT 323X17    TUB                               32.3801.748
+SECT 323X19    TUB                               32.3801.905
+SECT 323X21    TUB                               32.3802.144
+SECT 323X25    TUB                               32.3802.540
+SECT 323X31    TUB                               32.3803.175
+SECT 323X33    TUB                               32.3803.332
+SECT 323X38    TUB                               32.3803.810
+SECT 323X50    TUB                               32.3905.080
+SECT 323X9     TUB                               32.3800.953
+*                                                                                                                       
+SECT 33X4      TUB                               3.340 0.455
+SECT 33X6      TUB                               3.340 0.635
+SECT 355X10    TUB                               35.5601.031
+SECT 355X12    TUB                               35.5601.270
+SECT 355X14    TUB                               35.5601.420
+SECT 355X15    TUB                               35.5601.588
+SECT 355X19    TUB                               35.5601.905
+SECT 355X23    TUB                               35.5602.383
+SECT 355X25    TUB                               35.5602.540
+SECT 355X31    TUB                               35.5603.175
+SECT 355X38    TUB                               35.5603.810
+SECT 355X50    TUB                               35.5605.080
+SECT 355X9     TUB                               35.5600.953
+SECT 406X12    TUB                               40.6401.270
+SECT 406X14    TUB                               40.6401.427
+SECT 406X15    TUB                               40.6401.588
+SECT 406X16    TUB                               40.6401.666
+SECT 406X17    TUB                               40.6401.748
+SECT 406X19    TUB                               40.6401.905
+SECT 406X21    TUB                               40.6402.144
+SECT 406X25    TUB                               40.6402.540
+SECT 406X30    TUB                               40.6403.096
+SECT 406X31    TUB                               40.6403.175
+SECT 406X38    TUB                               40.6403.810
+SECT 406X50    TUB                               40.6405.080
+SECT 406X9     TUB                               40.6400.953
+SECT 457X10    TUB                               45.7201.000
+SECT 457X15    TUB                               45.7201.588
+SECT 457X19    TUB                               45.7201.905
+SECT 457X25    TUB                               45.7202.540
+SECT 457X31    TUB                               45.7203.175
+SECT 457X38    TUB                               45.7203.810
+SECT 457X45    TUB                               45.7204.524
+SECT 457X50    TUB                               45.7205.080
+SECT 457X9     TUB                               45.7200.953
+SECT 48X10     TUB                               4.830 1.016
+SECT 48X5      TUB                               4.830 0.508
+SECT 48X7      TUB                               4.830 0.714
+SECT 508X12    TUB                               50.8001.270
+SECT 508X15    TUB                               50.8001.509
+*SECT 508X15    TUB                                 50.81.588                                                           
+SECT 508X17    TUB                               50.8001.748
+SECT 508X25    TUB                               50.8002.540
+SECT 508X26    TUB                               50.8002.619
+SECT 508X31    TUB                               50.8003.175
+SECT 508X38    TUB                               50.8003.810
+SECT 508X50    TUB                               50.8005.080
+SECT 508X9     TUB                               50.8000.953
+SECT 559X12    TUB                               55.9001.270
+SECT 559X15    TUB                               55.9001.588
+SECT 559X19    TUB                               55.9001.905
+SECT 559X25    TUB                               55.9002.540
+SECT 559X31    TUB                               55.9003.175
+SECT 559X38    TUB                               55.9003.810
+SECT 609X12    TUB                               60.9601.270
+SECT 609X14    TUB                               60.9601.427
+SECT 609X17    TUB                               60.9601.748
+SECT 609X19    TUB                               60.9601.905
+SECT 609X25    TUB                               60.9602.540
+SECT 609X31    TUB                               60.9603.175
+SECT 609X38    TUB                               60.9603.810
+SECT 609X50    TUB                               60.9605.080
+SECT 609X59    TUB                               60.9605.954
+SECT 609X9     TUB                               60.9600.953
+SECT 60X11     TUB                               6.030 1.107
+SECT 60X12     TUB                               6.030 1.270
+SECT 60X14     TUB                               6.030 1.420
+SECT 60X3      TUB                               6.030 0.391
+*SECT 60X5      TUB                                 6.030.554                                                           
+SECT 60X8      TUB                               6.030 0.874
+*                                                                                                                       
+***X65 WELDED SECTIONS                                                                                                  
+SECT 660X12    TUB                               66.0001.270
+SECT 660X15    TUB                               66.0001.590
+SECT 660X19    TUB                               66.0001.910
+SECT 660X25    TUB                               66.0002.540
+SECT 711X12    TUB                               71.1001.270
+SECT 711X15    TUB                               71.1001.590
+SECT 711X19    TUB                               71.1001.910
+SECT 711X25    TUB                               71.1002.540
+SECT 711X31    TUB                               71.1003.180
+SECT 711X38    TUB                               71.1003.810
+SECT 73X5      TUB                               7.300 0.516
+SECT 73X7      TUB                               7.300 0.701
+SECT 762X12    TUB                               76.2001.270
+SECT 762X15    TUB                               76.2001.590
+SECT 762X19    TUB                               76.2001.910
+SECT 762X25    TUB                               76.2002.540
+SECT 762X31    TUB                               76.2003.180
+SECT 762X38    TUB                               76.2003.810
+SECT 88X11     TUB                               8.000 1.113
+SECT 88X15     TUB                               8.890 1.524
+SECT 88X5      TUB                               8.890 0.549
+SECT 88X7      TUB                               8.890 0.762
+***                                                                                                                     
+SECT CAP       TUB                               111.4055.65
+SECT DUMMY     PRI                               5.000      5.000
+SECT DUMMY2    PRI                               18.000     7.000
+SECT EB1       TUB                               30.6602.330
+SECT EB2       CON                               44.5605.00030.660
+SECT EB3       TUB                               44.5602.450
+SECT FA1       TUB                               29.6354.500
+SECT FA2       CON                               71.1207.00044.560
+SECT FA3       TUB                               71.1202.540
+SECT FLATBAR   PRI                               50.000     4.000
+SECT HEA180    WFC                               18.0000.95017.1000.600
+SECT HEA400    CHL                               40.00033.002.000 2.000
+SECT HEB200    WFC                               20.0001.50017.1000.090
+SECT HSUP      PRI                               25.00012.502.000
+SECT HUB       BOX                               100.0016.00100.0016.00
+SECT LBEAM     BOX                               28.0001.60028.0001.600
+SECT LPD       PRI                               85.000     16.000
+SECT PCAP      TUB                               65.0006.500
+SECT PIP       TUB                               22.8902.000
+SECT PIPTRA2   CON                               22.8903.00026.400
+SECT PIPTRAN   CON                               26.4003.00022.890
+SECT PLATE20   PRI                               36.000     4.000
+SECT PLATE40   PRI                               33.000     6.000
+SECT PP3       TUB                               26.4003.360
+SECT PSUP      PRI                               8.500      1.000
+SECT PUP       TUB                               26.4003.360
+SECT TAB       PRI                               14.000     110.00
+SECT TEE       TUB                               38.5006.000
+SECT UPN180    CHL                               18.0007.5000.550 1.050
+SECT V10-1     TUB                               81.00016.40
+SECT V10-2     TUB                               32.0007.000
+SECT V10-3     TUB                               40.0009.200
+SECT V2-1      TUB                               81.00016.40
+SECT V2-2      TUB                               81.00016.40
+GRUP
+GRUP AUX DUMMY                2.0+47.7229999. 1    1.001.00           0.1000    
+GRUP BND PP3                  20.707.96245.00 1    1.001.00     0.500 7.8490    
+GRUP BR1 457X25               20.707.96236.00 1    1.001.00     0.500F7.8490    
+GRUP CAP CAP                  20.707.96245.00 1    1.001.00     0.500 7.8490    
+*GRUP CY1 559X16               20.707.96245.00 1    1.001.00     0.500F7.8490
+GRUP CY2 406X25               20.707.96245.00 1    1.001.00     0.500F7.8490    
+*GRUP CY3 324X14               20.707.96245.00 1    1.001.00     0.500F7.8490
+GRUP CY6 323X17               20.707.96245.00 1    1.001.00     0.500F7.8490    
+*GRUP CYP 273X13               20.707.96245.00 1    1.001.00     0.500F7.8490
+GRUP EB1 EB1                  20.707.96245.00 1    1.001.00     0.500F7.8490    
+GRUP EB2 EB2                  20.707.96245.00 1    1.001.00     0.500F7.8490    
+GRUP EB3 EB3                  20.707.96245.00 1    1.001.00     0.500F7.8490    
+GRUP EL1 PIP                  5.2647.96245.00 1    1.001.00     0.500 7.8500    
+*
+GRUP EL2 PP3                  8.3857.96245.00 1    1.001.00     0.500 7.8500    
+*
+*GRUP EL3 60.3X9               9.9337.96245.00 1    1.001.00     0.500N8.4400
+*
+GRUP FA1 EB3                  20.707.96245.00 1    1.001.00     0.500F7.8490    
+GRUP FA2 FA2                  20.707.96245.00 1    1.001.00     0.500F7.8490    
+GRUP FA3 711X31               20.707.96245.00 1    1.001.00     0.500F7.8490    
+GRUP HOP HEA400               20.707.72245.00 1    1.001.00          N7.8490    
+GRUP HSB HEB200               20.707.96245.00 1    1.001.00     0.500F7.8490    
+GRUP HSP 323X17               20.707.96245.00 1    1.001.00     0.500F7.8490    
+GRUP HUB HUB                  20.707.96245.00 9    1.001.00     0.500F7.8490    
+GRUP JLT 323X17               20.707.96245.00 1    1.001.00     0.500F7.8490    
+GRUP LG1 508X38               20.707.96236.00 1    1.001.00     0.500F7.8490    
+GRUP LG2 559X25               20.707.96236.00 1    1.001.00     0.500F7.8490    
+GRUP LPD LPD                  20.707.96233.50 1    1.001.00          F7.8490    
+GRUP LTR 355X19               20.707.96236.00 1    1.001.00     0.500F7.8490    
+GRUP MM1 LBEAM                2.1000.8009999. 1    1.001.00           7.8490    
+GRUP MM2 UPN180               0.0210.0089999. 1    1.001.00           7.8490    
+GRUP MM4 FLATBAR              20.707.96245.00 1    1.001.00          N7.8490    
+GRUP MMA DUMMY2               2.0+47.7229999. 1    1.001.00           0.1000    
+GRUP P02 60X8                 20.707.96245.00 1    1.001.00     0.500 7.8490    
+GRUP P10 306X23               20.707.96245.00 1    1.001.00     0.500 7.8490    
+GRUP P11 306X23               20.707.96245.00 1    1.001.00     0.500 7.8490    
+GRUP PAD 323X17               20.707.96245.00 1    1.001.00     0.500F7.8490    
+GRUP PCP PCAP                 20.707.96245.00 1    1.001.00     0.500 7.8490    
+*GRUP PI2 60.3X9               20.707.72245.00 1    1.001.00     0.500 8.4400
+GRUP PI3 PP3                  20.707.96245.00 1    1.001.00     0.500 7.8490    
+GRUP PIP 323X25               20.707.96245.00 1    1.001.00     0.500 7.8490    
+GRUP PK2 PIPTRA2              20.007.722100.0 1    1.001.00     0.500 7.8490    
+GRUP PKK PIPTRAN              20.007.722100.0 1    1.001.00     0.500 7.8490    
+GRUP PL2 PLATE40              2000.7.7229999. 1    1.001.00           7.8490    
+GRUP PLT PLATE20              2000.7.7229999. 1    1.001.00           7.8490    
+GRUP POU EB3                  20.707.96245.00 1    1.001.00     0.500 7.8490    
+GRUP PSA 168X14               20.707.96235.50 1    1.001.00     0.500F7.8490    
+GRUP R1  PIPTRA2              20.007.722100.0 1    1.001.00     0.500 7.8490    
+GRUP R2  PIPTRA2              20.007.722100.0 1    1.001.00     0.500 7.8490    
+GRUP SLE 711X31               20.707.96245.00 1    1.001.00     0.500F7.8490    
+GRUP SUP PSUP                 20.707.72224.80 1    1.001.00          N7.8490    
+GRUP TAB TAB                  0.0010.0010.100 1    1.001.00           0.1000    
+GRUP TE1 PIPTRAN              20.007.722100.0 1    1.001.00     0.500 7.8490    
+GRUP TE2 306X23               20.007.722100.0 1    1.001.00     0.500 7.8490    
+GRUP TEE TEE                  20.007.72245.00 1    1.001.00     0.500 7.8490    
+GRUP TR1 508X25               20.707.96236.00 1    1.001.00     0.500F7.8490    
+GRUP VLV 711X25               20.707.96245.00 1    1.001.00     0.500N7.8490    
+GRUP VP  168X7                20.707.96236.00 1    1.001.00     0.500F7.8490    
+GRUP VPP 168X14               20.707.96236.00 1    1.001.00     0.500F7.8490    
+GRUP VV1 V10-1                20.707.96245.00 1    1.001.00     0.500N7.8490    
+GRUP VV2 V10-2                20.707.96245.00 1    1.001.00     0.500N7.8490    
+GRUP VV3 V10-3                20.707.72245.00 1    1.001.00     0.500N7.8490    
+GRUP VV4 73X7                 20.707.96245.00 1    1.001.00     0.500 7.8490    
+GRUP VV5 168X18               20.707.96245.00 1    1.001.00     0.500 7.8490    
+GRUP VV6 273X21               20.707.96245.00 1    1.001.00     0.500 7.8490    
+**GRUP VV4 68X5                 20.707.72245.00 1    1.001.00     0.500N1.00-2
+**GRUP VV5 VALVE4               20.007.72224.80 1    1.001.00     0.500 7.8490
+**GRUP VV6 VALVE5               20.007.72224.80 1    1.001.00     0.500 7.8490
+**GRUP WEL 60.3X9               20.707.72245.00 1    1.001.00     0.500 8.4400
+GRUP YK1 323X17               20.707.96236.00 1    1.001.00     0.500F7.8490    
+GRUP YK2 355X19               20.707.96236.00 1    1.001.00     0.500F7.8490    
+GRUP PIN 88X11                20.007.72224.80 1    1.001.00     0.500 7.8490    
+GRUP PL3 YOKEPL               2000.7.7229999. 1    1.001.00           7.8490    
+MEMBER
+MEMBER 00040128 AUX
+MEMBER 00470052 AUX
+MEMBER 01280137 AUX
+MEMBER 01280167 AUX
+MEMBER P001P002 AUX   001011
+MEMBER P003P236 AUX         001011
+MEMBER P225P001 AUX
+MEMBER P232P238 AUX         100111
+MEMBER P236P214 AUX
+MEMBER P237P232 AUX   000011
+MEMBER 00480056 BR1
+MEMBER 00550048 BR1
+MEMBER 00590057 BR1
+MEMBER 00590058 BR1
+MEMBER 00740158 BR1
+MEMBER 00740169 BR1
+MEMBER 00760159 BR1
+MEMBER 00830082 BR1
+MEMBER 00940085 BR1
+MEMBER 00940096 BR1
+MEMBER 00960076 BR1
+MEMBER 01690083 BR1
+MEMBER 01270139 CY2
+MEMBER 01320127 CY2
+MEMBER 01390133 CY2
+MEMBER EB01EB03 EB1
+MEMBER EB04EB05 EB1
+MEMBER EB03EB04 EB2
+MEMBER EB02EB03 EB3
+MEMBER FA01FA02 FA1
+MEMBER FA03FA05 FA1
+MEMBER FA03FA02 FA2
+MEMBER FA03FA04 FA3
+MEMBER 01370193 HSB                 90.00
+MEMBER 01670163 HSB                 90.00
+MEMBER 01940137 HSB                 90.00
+MEMBER 01960167 HSB                 90.00
+MEMBER 00470172 HSP
+MEMBER 00740192 HSP
+MEMBER 00760172 HSP
+MEMBER 00800084 HSP
+MEMBER 00800192 HSP
+MEMBER 00940107 HSP
+MEMBER 01070047 HSP
+MEMBER 01070108 HSP
+MEMBER 01080111 HSP
+MEMBER 01100194 HSP
+MEMBER 01230163 HSP
+MEMBER 0123UP02 HSP
+MEMBER 01630198 HSP
+MEMBER 01720080 HSP
+MEMBER 01880083 HSP
+MEMBER 01880108 HSP
+MEMBER 01920193 HSP
+MEMBER 01930123 HSP
+MEMBER 01940188 HSP
+MEMBER 01960110 HSP
+MEMBER 01960199 HSP
+MEMBER 01280130 HUB
+MEMBER 01280131 HUB
+MEMBER 00210025 JLT
+MEMBER 00210115 JLT
+MEMBER 00270031 JLT
+MEMBER 00270092 JLT
+MEMBER 00290030 JLT
+MEMBER 00290174 JLT
+MEMBER 00320035 JLT
+MEMBER 00320177 JLT
+MEMBER 00340075 JLT                           L    4.304.30
+MEMBER 00380079 JLT                           L    4.304.30
+MEMBER 00390136 JLT                           L    4.304.30
+MEMBER 00410001 JLT
+MEMBER 00410034 JLT                           L    4.304.30
+MEMBER 00420154 JLT                           L    4.304.30
+MEMBER 00430003 JLT
+MEMBER 00430038 JLT                           L    4.304.30
+MEMBER 00440008 JLT
+MEMBER 00440039 JLT                           L    4.304.30
+MEMBER 00460010 JLT
+MEMBER 00460042 JLT                           L    4.304.30
+MEMBER 00640044 JLT                           L    4.304.30
+MEMBER 00650030 JLT
+MEMBER 00670041 JLT                           L    4.304.30
+MEMBER 00680035 JLT
+MEMBER 00690025 JLT
+MEMBER 00700046 JLT                           L    4.304.30
+MEMBER 00730031 JLT
+MEMBER 00750033 JLT                           L    4.304.30
+MEMBER 00770043 JLT                           L    4.304.30
+MEMBER 00790037 JLT                           L    4.304.30
+MEMBER 00790092 JLT
+MEMBER 00920115 JLT
+MEMBER 01150075 JLT
+MEMBER 01360036 JLT                           L    4.304.30
+MEMBER 01540040 JLT                           L    4.304.30
+MEMBER 01540177 JLT
+MEMBER 01740136 JLT
+MEMBER 01770174 JLT
+MEMBER 00220201 LG1                           L    8.208.20
+MEMBER 00280055 LG1
+MEMBER 00490045 LG1
+MEMBER 00510028 LG1
+MEMBER 00510049 LG1
+MEMBER 00540155 LG1
+MEMBER 00540156 LG1
+MEMBER 00550057 LG1
+MEMBER 00560058 LG1
+MEMBER 00570060 LG1                           L    8.208.20
+MEMBER 00580061 LG1                           L    8.208.20
+MEMBER 00600022 LG1                           L    8.208.20
+MEMBER 00610173 LG1                           L    8.208.20
+MEMBER 00650064 LG1                           L    8.208.20
+MEMBER 00650072 LG1                           L    8.208.20
+MEMBER 00670069 LG1                           L    8.208.20
+MEMBER 00680203 LG1                           L    8.208.20
+MEMBER 00690071 LG1                           L    8.208.20
+MEMBER 00700157 LG1
+MEMBER 00710073 LG1                           L    8.208.20
+MEMBER 00730202 LG1                           L    8.208.20
+MEMBER 00770081 LG1
+MEMBER 0081P239 LG1
+MEMBER 00820085 LG1
+MEMBER 00850086 LG1
+MEMBER 00860087 LG1
+MEMBER 00870088 LG1
+MEMBER 01550050 LG1
+MEMBER 01560056 LG1
+MEMBER 01580159 LG1
+MEMBER 01580191 LG1
+MEMBER 01590160 LG1
+MEMBER 01600161 LG1
+MEMBER 01610162 LG1
+MEMBER 01730200 LG1                           L    8.208.20
+MEMBER 01910157 LG1
+MEMBER 02000064 LG1                           L    8.208.20
+MEMBER 02010067 LG1                           L    8.208.20
+MEMBER 02020077 LG1                           L    8.208.20
+MEMBER 02030070 LG1                           L    8.208.20
+MEMBER P2390082 LG1
+MEMBER 00990100 LPD
+MEMBER 00990124 LPD
+MEMBER 00490053 LTR
+MEMBER 00530117 LTR
+MEMBER 00630053 LTR
+MEMBER 00870089 LTR
+MEMBER 00890113 LTR
+MEMBER 00900089 LTR
+MEMBER 01550164 LTR
+MEMBER 01610170 LTR
+MEMBER 01640116 LTR
+MEMBER 01650164 LTR
+MEMBER 01660170 LTR
+MEMBER 01700114 LTR
+MEMBER 00520140 MM1
+MEMBER 01390052 MM1
+MEMBER 01420145 MM1
+MEMBER 01430142 MM1
+MEMBER 01440143 MM1
+MEMBER 00070134 MM4
+MEMBER 00090141 MM4
+MEMBER 00140091 MM4
+MEMBER 00150149 MM4
+MEMBER 00160095 MM4
+MEMBER 00170150 MM4
+MEMBER 00230097 MM4
+MEMBER 00240106 MM4
+MEMBER 00660095 MM4                 90.00
+MEMBER 00660112 MM4
+MEMBER 00910066 MM4                 90.00
+MEMBER 00950121 MM4                 90.00
+MEMBER 00970118 MM4                 90.00
+MEMBER 01060122 MM4                 90.00
+MEMBER 01180106 MM4                 90.00
+MEMBER 01180171 MM4
+MEMBER 01190091 MM4                 90.00
+MEMBER 01200097 MM4                 90.00
+MEMBER 01340181 MM4                 90.00
+MEMBER 01410189 MM4                 90.00
+MEMBER 01490182 MM4                 90.00
+MEMBER 01500190 MM4                 90.00
+MEMBER 01810141 MM4                 90.00
+MEMBER 01810175 MM4
+MEMBER 01820150 MM4                 90.00
+MEMBER 01820176 MM4
+MEMBER 01850134 MM4                 90.00
+MEMBER 01870149 MM4                 90.00
+MEMBER P2000186 P02
+MEMBER P201P200 P02
+MEMBER P202P201 P02
+MEMBER P203P202 P02
+MEMBER P204P203 P02
+MEMBER P205P204 P02
+MEMBER P206P205 P02
+MEMBER P207P206 P02
+MEMBER P208P207 P02
+MEMBER P209P208 P02
+MEMBER P210P209 P02
+MEMBER P211P210 P02
+MEMBER P212P211 P02
+MEMBER P213P212 P02
+MEMBER P217P216 P02
+MEMBER P218P217 P02
+MEMBER P219P218 P02
+MEMBER P220P219 P02
+MEMBER P221P220 P02
+MEMBER P222P221 P02
+MEMBER P223P222 P02
+MEMBER P227P228 P02
+MEMBER P228P229 P02
+MEMBER P229P231 P02
+MEMBER P231P233 P02
+MEMBER P233P232 P02         000110
+MEMBER 01530128 P10
+MEMBER EB010002 P10
+MEMBER EB05V001 P10
+MEMBER P100P101 P10
+MEMBER P101P102 P10
+MEMBER P102P103 P10
+MEMBER P103P104 P10
+MEMBER P104P105 P10
+MEMBER P105P106 P10
+MEMBER P106P107 P10
+MEMBER P107P108 P10
+MEMBER P108P109 P10
+MEMBER P109P110 P10
+MEMBER P110P111 P10
+MEMBER P1110153 P10
+MEMBER 00020000 P11
+MEMBER 00050007 PAD
+MEMBER 00070028 PAD
+MEMBER 00070175 PAD
+MEMBER 00090011 PAD
+MEMBER 00090022 PAD
+MEMBER 00120014 PAD
+MEMBER 00130015 PAD
+MEMBER 00140112 PAD
+MEMBER 00140156 PAD
+MEMBER 00150081 PAD
+MEMBER 00150176 PAD
+MEMBER 00160018 PAD
+MEMBER 00160173 PAD
+MEMBER 00170019 PAD
+MEMBER 00170086 PAD
+MEMBER 00200023 PAD
+MEMBER 00230157 PAD
+MEMBER 00230171 PAD
+MEMBER 00240026 PAD
+MEMBER 00240160 PAD
+MEMBER 01120016 PAD
+MEMBER 01710024 PAD
+MEMBER 01750009 PAD
+MEMBER 01760017 PAD
+MEMBER 01280129 PCP
+MEMBER 00330078 PL2
+MEMBER 00370109 PL2
+MEMBER 00930033 PL2
+MEMBER 01050037 PL2
+MEMBER 00360135 PLT
+MEMBER 00400168 PLT
+MEMBER 01950036 PLT
+MEMBER 01970040 PLT
+MEMBER FA05EB02 POU
+MEMBER 00480059 SLE
+MEMBER 0048FA04 SLE
+MEMBER 00590062 SLE
+MEMBER 00960132 SLE
+MEMBER 00990096 SLE
+MEMBER 01690098 SLE
+MEMBER 01690132 SLE
+MEMBER P1000183 TE2                 30.00
+MEMBER V0020184 TE2                 30.00
+MEMBER 01840186 TEE                 30.00
+MEMBER 01860183 TEE                 30.00
+MEMBER 00540138 VP                            L    3.203.20
+MEMBER 01380147 VP
+MEMBER 01380152 VP
+MEMBER 01420146 VP
+MEMBER 01460148 VP
+MEMBER 01470143 VP
+MEMBER 01470146 VP
+MEMBER 01480051 VP                            L    3.203.20
+MEMBER 01480151 VP
+MEMBER 0200T017 VP
+MEMBER 0201T010 VP
+MEMBER 0203T019 VP
+MEMBER P002T040 VP
+MEMBER P003T012 VP
+MEMBER P237T005 VP
+MEMBER P238P002 VP
+MEMBER T003T002 VP
+MEMBER T003T004 VP
+MEMBER T003T030 VP
+MEMBER T004P237 VP
+MEMBER T004T011 VP
+MEMBER T005T006 VP
+MEMBER T005T040 VP
+MEMBER T008T009 VP
+MEMBER T009T003 VP
+MEMBER T009T010 VP
+MEMBER T010T011 VP
+MEMBER T011P003 VP
+MEMBER T0120202 VP
+MEMBER T012T013 VP
+MEMBER T013T005 VP
+MEMBER T013T014 VP
+MEMBER T015T016 VP
+MEMBER T016T017 VP
+MEMBER T016T030 VP
+MEMBER T017T018 VP
+MEMBER T018T019 VP
+MEMBER T019T020 VP
+MEMBER T020T021 VP
+MEMBER T020T040 VP
+MEMBER T030T02A VP
+MEMBER T030T03A VP
+MEMBER T03AP238 VP
+MEMBER T03AT018 VP
+MEMBER T040T041 VP
+MEMBER V005V007 VV1
+MEMBER V007V006 VV1
+MEMBER V001V005 VV2
+MEMBER V006V002 VV2
+MEMBER V007V008 VV3
+MEMBER 0180P213 VV4
+MEMBER P2160180 VV4
+MEMBER P226P223 VV4
+MEMBER P227P226 VV4
+MEMBER 0180P215 VV5
+MEMBER P224P226 VV5
+MEMBER P232P230 VV5
+MEMBER P232P234 VV5
+MEMBER 0180P214 VV6
+MEMBER P225P226 VV6
+MEMBER DOW10060 YK1
+MEMBER DOW20061 YK1
+MEMBER 00710006 PLT   000000        90.00
+MEMBER 00060125 PLT         000111  90.00
+MEMBER 01010006 PLT
+MEMBER 01010205 PLT
+MEMBER 02070208 PLT
+MEMBER 00060207 PLT
+MEMBER 02090071 PLT                -90.00
+MEMBER 0110UP01 HSP
+MEMBER Y001YCO3 YK2
+MEMBER YCO3Y004 YK2
+MEMBER 00680072 LG1                           L    8.208.20
+MEMBER 00720211 PLT   000000        90.00
+MEMBER 02110210 PLT         000111  90.00
+MEMBER 02120211 PLT
+MEMBER 02120213 PLT
+MEMBER 02140215 PLT
+MEMBER 02110214 PLT
+MEMBER 02160072 PLT                -90.00
+MEMBER Y002YC04 YK2
+MEMBER YC04Y004 YK2
+MEMBER 0125Y003 PL3                 90.00
+MEMBER 0210Y007 PL3                 90.00
+MEMBER Y001Y010 YK2
+MEMBER Y002Y011 YK2
+MEMBER Y003Y005 PL3                 90.00
+MEMBER Y007Y009 PL3                 90.00
+MEMBER 01250104 PIN
+MEMBER 01250126 PIN
+MEMBER 02100179 PIN
+MEMBER 02100178 PIN
+MEMBER Y007YCO2 YK2
+MEMBER YCO2Y002 YK2
+MEMBER Y003YCO1 YK2
+MEMBER YCO1Y001 YK2
+PGRUP
+*
+PGRUP 05P 0.5000S20.700 0.30035.500                                     7.8159  
+*
+PGRUP 10P 1.0000S 2.070 0.30035.500                                     7.8490  
+PGRUP 10V 1.0000I20.700 0.30035.500                                     8.1398  
+*
+PGRUP 30P 3.0000I20.700 0.30035.500                                     1.0000-5
+*
+PGRUP 5M Z1.0000S 0.021 0.30035.500-18.00                               7.8941  
+PLATE
+PLATE A001 T003T030T040T00510P            0
+PLATE A002 T011T004T005T01310P            0
+PLATE A003 T020T040T03AT01810P            0
+JOINT
+JOINT 0000      0.     0.     0.-78.000
+*                                                                                                                       
+JOINT 0001      4.    -2.     0.              -48.000
+JOINT 0002      1.     0.     0. 45.600
+JOINT 0003      7.    -2.     0. 60.000       -48.000
+JOINT 0004      9.     0.     1. 81.600        73.000
+JOINT 0005      0.    -2.     0. 94.000-12.000-44.000
+JOINT 0007      1.    -2.     0. 25.000-12.000-44.000
+JOINT 0008      4.     2.     0.              -48.000
+JOINT 0009      3.    -2.     0. 25.000-12.000-44.000
+JOINT 0010      7.     2.     0. 60.000       -48.000
+JOINT 0011      3.    -2.     0. 56.000-12.000-44.000
+JOINT 0012      0.     2.     0. 94.000 12.000-44.000
+JOINT 0013      8.    -2.     0.  4.000-12.000-44.000
+JOINT 0014      1.     2.     0. 25.000 12.000-44.000
+JOINT 0015      8.    -2.     0. 35.000-12.000-44.000
+JOINT 0016      3.     2.     0. 25.000 12.000-44.000
+JOINT 0017     10.    -2.     0. 35.000-12.000-44.000
+JOINT 0018      3.     2.     0. 56.000 12.000-44.000
+JOINT 0019     10.    -2.     0. 66.000-12.000-44.000
+JOINT 0020      8.     2.     0.  4.000 12.000-44.000
+JOINT 0021      5.    -2.     0. 15.500-63.500-33.500
+JOINT 0022      3.    -1.     0. 25.000-35.000
+JOINT 0023      8.     2.     0. 35.000 12.000-44.000
+JOINT 0024     10.     2.     0. 35.000 12.000-44.000
+JOINT 0025      5.    -1.     0. 15.500-60.900-33.500
+JOINT 0026     10.     2.     0. 66.000 12.000-44.000
+JOINT 0027      6.    -2.     0. 44.600-63.500-33.500
+JOINT 0028      1.    -1.     0. 25.000-35.000
+JOINT 0029      5.     2.     0. 15.500 63.500-33.500
+JOINT 0030      5.     1.     0. 15.500 60.900-33.500
+JOINT 0031      6.    -1.     0. 44.600-60.900-33.500
+JOINT 0032      6.     2.     0. 44.600 63.500-33.500
+JOINT 0033      4.    -3.     0.       -49.500-25.500
+JOINT 0034      4.    -2.     0.       -51.000-25.500
+JOINT 0035      6.     1.     0. 44.600 60.900-33.500
+JOINT 0036      4.     3.     0.        49.500-25.500
+JOINT 0037      7.    -3.     0. 60.000-49.500-25.500
+JOINT 0038      7.    -2.     0. 60.000-51.000-25.500
+JOINT 0039      4.     2.     0.        51.000-25.500
+JOINT 0040      7.     3.     0. 60.000 49.500-25.500
+JOINT 0041      4.    -2.     0.              -14.300
+JOINT 0042      7.     2.     0. 60.000 51.000-25.500
+JOINT 0043      7.    -2.     0. 60.000       -14.300
+JOINT 0044      4.     2.     0.              -14.300
+JOINT 0045      0.    -1.     0.-32.500-35.000
+JOINT 0046      7.     2.     0. 60.000       -14.300
+JOINT 0047     10.     0.     0. 31.500        79.100
+JOINT 0048      0.     0.     0. 15.300
+JOINT 0049      0.    -1.     0. 13.500-35.000
+JOINT 0050      0.     1.     0.-32.500 35.000
+JOINT 0051      0.    -1.     0. 75.000-35.000
+JOINT 0052     10.     0.     1. 31.500        15.000
+JOINT 0053      0.    -1.     0. 13.500-35.000 80.000
+JOINT 0054      0.     1.     0. 75.000 35.000
+JOINT 0055      1.    -1.     0. 50.700-35.000
+JOINT 0056      1.     1.     0. 50.700 35.000
+JOINT 0057      1.    -1.     0. 84.500-35.000
+JOINT 0058      1.     1.     0. 84.500 35.000
+JOINT 0059      2.     0.     0. 97.800
+JOINT 0060      2.    -1.     0. 81.300-35.000
+JOINT 0061      2.     1.     0. 81.300 35.000
+JOINT 0062      3.     0.     0. 20.000
+JOINT 0063      0.    -1.     0. 36.500-35.000 80.000
+JOINT 0064      4.     1.     0.        35.000
+JOINT 0065      5.     1.     0. 15.500 35.000
+JOINT 0066      2.     2.     0. 31.250 12.000-68.000
+JOINT 0067      4.    -1.     0.       -35.000
+JOINT 0068      6.     1.     0. 44.600 35.000
+JOINT 0069      5.    -1.     0. 15.500-35.000
+JOINT 0070      7.     1.     0. 60.000 35.000
+JOINT 0071      5.    -1.     0. 81.500-35.000
+JOINT 0072      5.     1.     0. 81.500 35.000
+JOINT 0073      6.    -1.     0. 44.600-35.000
+JOINT 0074      9.     0.     0. 31.700 82.800
+JOINT 0075      4.    -3.     0.        -0.200-25.600
+JOINT 0076     10.     0.     0. 84.600 60.000
+JOINT 0077      7.    -1.     0. 60.000-35.000
+JOINT 0078      3.    -3.     0. 72.000-49.500-25.500
+JOINT 0079      7.    -2.     0. 60.000-99.500-25.500
+JOINT 0080     10.     0.     0. 31.500 82.800 79.100
+JOINT 0081      8.    -1.     0. 35.000-35.000
+JOINT 0082      9.    -1.     0. 75.500-35.000
+JOINT 0083      9.     0.     0. 31.700-82.800
+JOINT 0084     10.     1.     0. 31.500 18.600 79.100
+JOINT 0085     10.    -1.     0.  9.500-35.000
+JOINT 0086     10.    -1.     0. 35.000-35.000
+JOINT 0087     10.    -1.     0. 96.500-35.000
+JOINT 0088     11.    -1.     0. 42.500-35.000
+JOINT 0089     10.    -1.     0. 96.500-35.000 80.000
+JOINT 0090     10.    -1.     0. 72.500-35.000 80.000
+JOINT 0091      1.     2.     0. 25.000 12.000-68.000
+JOINT 0092      6.    -2.     0. 44.600-99.724-25.532
+JOINT 0093      4.    -3.     0. 28.000-49.500-25.500
+JOINT 0094     10.     0.     0. 84.600-60.000
+JOINT 0095      3.     2.     0. 25.000 12.000-68.000
+JOINT 0096     11.     0.     0. 44.500
+JOINT 0097      8.     2.     0. 35.000 12.000-68.000
+JOINT 0098      8.     0.     0. 40.000
+JOINT 0099     11.     0.     0. 76.000
+JOINT 0100     12.     0.     0. 40.000
+JOINT 0105      7.    -3.     0. 88.000-49.500-25.500
+JOINT 0106     10.     2.     0. 35.000 12.000-68.000
+JOINT 0107     10.     0.     0. 31.500-60.000 79.100
+JOINT 0108     10.     0.     0. 31.500-82.800 79.100
+JOINT 0109      7.    -3.     0. 32.000-49.500-25.500
+JOINT 0110      9.     0.     1. 31.700-82.800 97.650
+JOINT 0111     10.    -1.     0. 31.500-18.600 79.100
+JOINT 0112      2.     2.     0. 31.250 12.000-44.000
+JOINT 0113     11.    -1.     0. 31.300-35.000 80.000
+JOINT 0114     11.     1.     0. 31.300 35.000 80.000
+JOINT 0115      5.    -2.     0. 15.500-99.975-25.568
+JOINT 0116      0.     1.     0.-21.800 35.000 80.000
+JOINT 0117      0.    -1.     0.-21.800-35.000 80.000
+JOINT 0118      9.     2.     0. 35.000 12.000-68.000
+JOINT 0119      0.     2.     0. 94.000 12.000-68.000
+JOINT 0120      8.     2.     0.  4.000 12.000-68.000
+JOINT 0121      3.     2.     0. 56.000 12.000-68.000
+JOINT 0122     10.     2.     0. 66.000 12.000-68.000
+JOINT 0123      9.     0.     1. 31.700 82.800 97.650
+JOINT 0124     10.     0.     0. 85.000
+JOINT 0125      5.    -1.     0. 81.500-35.000 55.700
+JOINT 0127      9.     0.     0. 81.600        79.100
+JOINT 0128      9.     0.     1. 81.600        90.000
+JOINT 0129     10.     0.     1. 41.600        90.000
+JOINT 0130      9.     0.     1. 49.600        90.000
+JOINT 0131      9.     0.     1. 99.600        90.000
+JOINT 0132      9.     0.     0. 81.600
+JOINT 0133      9.     0.     1. 81.600        34.550
+JOINT 0134      1.    -2.     0. 25.000-12.000-68.000
+JOINT 0135      3.     3.     0. 72.000 49.500-25.500
+JOINT 0136      4.     3.     0.         0.200-25.600
+JOINT 0137      9.     0.     1. 31.700        42.300
+JOINT 0138      0.     0.     1. 75.000 75.200 49.600
+JOINT 0139      9.     0.     1. 81.600        15.000
+JOINT 0140     10.     0.     1. 87.000        15.000
+JOINT 0141      3.    -2.     0. 25.000-12.000-68.000
+JOINT 0142      0.     0.     1. 40.500-52.500 50.000
+JOINT 0143      0.     0.     1. 40.500 52.500 50.000
+JOINT 0144      0.     0.     1. 40.500 65.000 50.000
+JOINT 0145      0.     0.     1. 40.500-65.000 50.000
+JOINT 0146      0.     0.     1. 75.000-52.500 50.000
+JOINT 0147      0.     0.     1. 75.000 52.500 50.000
+JOINT 0148      0.     0.     1. 75.000-75.000 50.000
+JOINT 0149      8.    -2.     0. 35.000-12.000-68.000
+JOINT 0150     10.    -2.     0. 35.000-12.000-68.000
+JOINT 0151      0.     0.     1. 75.000-65.300 74.100
+JOINT 0152      0.     0.     1. 75.000 65.300 74.100
+JOINT 0153      9.     0.     1. 31.600        90.000
+JOINT 0154      7.     2.     0. 60.000 99.500-25.500
+JOINT 0155      0.     1.     0. 13.500 35.000
+JOINT 0156      1.     1.     0. 25.000 35.000
+JOINT 0157      8.     1.     0. 35.000 35.000
+JOINT 0158      9.     1.     0. 75.500 35.000
+JOINT 0159     10.     1.     0.  9.500 35.000
+JOINT 0160     10.     1.     0. 35.000 35.000
+JOINT 0161     10.     1.     0. 96.500 35.000
+JOINT 0162     11.     1.     0. 42.500 35.000
+JOINT 0163      9.     0.     2. 31.700 82.800 35.000
+JOINT 0164      0.     1.     0. 13.500 35.000 80.000
+JOINT 0165      0.     1.     0. 36.500 35.000 80.000
+JOINT 0166     10.     1.     0. 72.500 35.000 80.000
+JOINT 0167      9.     0.     2. 31.600        35.000
+JOINT 0168      7.     3.     0. 32.000 49.500-25.500
+JOINT 0169      8.     0.     0. 62.200
+JOINT 0170     10.     1.     0. 96.500 35.000 80.000
+JOINT 0171      9.     2.     0. 35.000 12.000-44.000
+JOINT 0172     10.     0.     0. 31.500 60.000 79.100
+JOINT 0173      3.     1.     0. 25.000 35.000
+JOINT 0174      5.     2.     0. 15.500 99.975-25.568
+JOINT 0175      2.    -2.     0. 31.250-12.000-44.000
+JOINT 0176      9.    -2.     0. 35.000-12.000-44.000
+JOINT 0177      6.     2.     0. 44.600 99.724-25.532
+JOINT 0180      5.     0.     1. 73.500 41.800  5.650
+JOINT 0181      2.    -2.     0. 31.250-12.000-68.000
+JOINT 0182      9.    -2.     0. 35.000-12.000-68.000
+JOINT 0183      5.     0.     0. 97.000
+JOINT 0184      5.     0.     0. 70.000
+JOINT 0185      0.    -2.     0. 94.000-12.000-68.000
+JOINT 0186      5.     0.     0. 83.500
+JOINT 0187      8.    -2.     0.  4.000-12.000-68.000
+JOINT 0188      9.     0.     0. 31.700-82.800 79.100
+JOINT 0189      3.    -2.     0. 56.000-12.000-68.000
+JOINT 0190     10.    -2.     0. 66.000-12.000-68.000
+JOINT 0191      9.     1.     0. 31.700 35.000
+JOINT 0192      9.     0.     0. 31.700 82.800 79.100
+JOINT 0193      9.     0.     1. 31.700 82.800 42.300
+JOINT 0194      9.     0.     1. 31.700-82.800 42.300
+JOINT 0195      4.     3.     0. 28.000 49.500-25.500
+JOINT 0196      9.     0.     2. 31.700-82.800 35.000
+JOINT 0197      7.     3.     0. 88.000 49.500-25.500
+JOINT 0198      9.     0.     2. 31.700 82.800 55.000
+JOINT 0199      9.     0.     2. 31.700-82.800 55.000
+JOINT 0200      3.     1.     0. 62.500 35.000
+JOINT 0201      3.    -1.     0. 62.500-35.000
+JOINT 0202      6.    -1.     0. 76.300-35.000
+JOINT 0203      6.     1.     0. 76.300 35.000
+JOINT DOW1      2.    -1.     1. 81.300-35.000 20.500
+JOINT DOW2      2.     1.     1. 81.300 35.000 20.500
+*END BH                                                                                                                 
+JOINT EB01      2.     0.     0.  1.500
+JOINT EB02      2.     0.     0. 11.500
+JOINT EB03      2.     0.     0. 33.900
+JOINT EB04      2.     0.     0. 60.900
+JOINT EB05      2.     0.     0. 80.000
+*FA                                                                                                                     
+JOINT FA01      0.     0.     0.-74.200
+JOINT FA02      0.     0.     0.-51.800
+JOINT FA03      0.     0.     0.-18.900
+JOINT FA04      0.     0.     0.
+JOINT FA05      0.     0.     0. 16.200
+JOINT P001      5.     0.     1. 72.700 49.000 37.100
+JOINT P002      5.     0.     1. 72.700 49.000 79.000
+JOINT P003      5.     0.     0. 73.500-49.000 64.000
+*PIPING                                                                                                                 
+JOINT P100      6.     0.     0. 12.300
+JOINT P101      6.     0.     0. 30.800
+JOINT P102      6.     0.     0. 56.600         3.700
+JOINT P103      6.     0.     0. 80.200        14.400
+JOINT P104      6.     0.     0. 99.900        31.300
+JOINT P105      7.     0.     0. 14.100        53.100
+JOINT P106      7.     0.     1. 53.200        36.900
+JOINT P107      7.     0.     1. 67.400        58.700
+JOINT P108      7.     0.     1. 87.100        75.600
+JOINT P109      8.     0.     1. 10.800        86.300
+JOINT P110      8.     0.     1. 36.500        90.000
+JOINT P111      9.     0.     1.  6.800        90.000
+JOINT P200      5.     0.     0. 85.200 22.300 22.300
+JOINT P201      5.     0.     0. 85.200 52.300 48.300
+JOINT P202      5.     0.     0. 80.100 54.700 50.000
+JOINT P203      5.     0.     0.  0.200 55.900 51.800
+JOINT P204      4.     0.     0. 95.400 52.100 52.100
+JOINT P205      4.     0.     0. 95.900 38.000 54.300
+JOINT P206      4.     0.     0. 95.900 34.500 57.000
+JOINT P207      4.     0.     0. 95.600 34.700 81.100
+JOINT P208      5.     0.     0.  0.500 35.800 84.900
+JOINT P209      5.     0.     0. 20.500 40.800 85.600
+JOINT P210      5.     0.     0. 25.400 41.800 87.900
+JOINT P211      5.     0.     1. 25.100 41.800  0.900
+JOINT P212      5.     0.     1. 30.000 41.800  4.100
+JOINT P213      5.     0.     1. 40.000 41.800  4.500
+JOINT P214      5.     0.     1. 73.500-41.700  5.700
+JOINT P215      5.     0.     1. 73.500 56.000  5.700
+JOINT P216      6.     0.     1.  7.000 41.800  6.800
+JOINT P217      6.     0.     1. 17.000 41.800  7.200
+JOINT P218      6.     0.     1. 21.900 42.000 12.400
+JOINT P219      6.     0.     1. 21.400 42.500 27.400
+JOINT P220      6.     0.     1. 21.200 37.600 32.700
+JOINT P221      6.     0.     1. 21.300-36.700 35.300
+JOINT P222      6.     0.     1. 16.200-41.800 35.600
+JOINT P223      6.     0.     1.  6.200-41.800 36.000
+JOINT P224      5.     0.     1. 72.700-56.000 37.100
+JOINT P225      5.     0.     1. 72.700 41.700 37.100
+JOINT P226      5.     0.     1. 72.700-41.800 37.100
+JOINT P227      5.     0.     1. 39.200-41.800 38.300
+JOINT P228      5.     0.     1. 29.300-41.800 38.600
+JOINT P229      5.     0.     1. 24.300-38.200 42.400
+JOINT P230      5.     0.     1. 54.400        74.300
+JOINT P231      5.     0.     1. 25.500 -2.900 77.800
+JOINT P232      5.     0.     1. 54.300 -0.100 79.000
+JOINT P233      5.     0.     1. 30.700  0.500 79.000
+JOINT P234      5.     0.     1. 54.400        95.200
+JOINT P236      5.     0.     1. 73.500-49.000  5.700
+JOINT P237      5.     0.     1. 54.300-49.000 79.000
+JOINT P238      5.     0.     1. 54.300 49.000 79.000
+JOINT P239      9.    -1.     0. 31.700-35.000
+JOINT T002      3.     0.     1. 82.300-49.000 79.000
+JOINT T003      3.     0.     1. 94.300-49.000 79.000
+JOINT T004      5.     0.     1.  4.300-49.000 79.000
+JOINT T005      6.     0.     1. 44.300-49.000 79.000
+JOINT T006      6.     0.     1. 57.300-49.000 79.000
+JOINT T008      3.     0.     0. 81.300-49.000 64.000
+JOINT T009      3.     0.     0. 94.300-49.000 64.000
+JOINT T010      4.     0.     0. 14.300-49.000 64.000
+JOINT T011      5.     0.     0.  4.300-49.000 64.000
+JOINT T012      6.     0.     0. 24.300-49.000 64.000
+JOINT T013      6.     0.     0. 44.300-49.000 64.000
+JOINT T014      6.     0.     0. 57.300-49.000 64.000
+JOINT T015      3.     0.     0. 81.300 49.000 64.000
+JOINT T016      3.     0.     0. 94.300 49.000 64.000
+JOINT T017      4.     0.     0. 14.300 49.000 64.000
+JOINT T018      5.     0.     0.  4.300 49.000 64.000
+JOINT T019      6.     0.     0. 24.300 49.000 64.000
+JOINT T020      6.     0.     0. 44.300 49.000 64.000
+JOINT T021      6.     0.     0. 57.300 49.000 64.000
+JOINT T02A      3.     0.     1. 82.300 49.000 79.000
+JOINT T030      3.     0.     1. 94.300 49.000 79.000
+JOINT T03A      5.     0.     1.  4.300 49.000 79.000
+JOINT T040      6.     0.     1. 44.300 49.000 79.000
+JOINT T041      6.     0.     1. 57.300 49.000 79.000
+JOINT UP02      8.     0.     2. 66.700 82.800 62.650
+JOINT V001      3.     0.     0. 79.300
+JOINT V002      5.     0.     0. 55.300
+JOINT V005      4.     0.     0. 19.300
+JOINT V006      5.     0.     0. 15.300
+JOINT V007      4.     0.     0. 60.300
+JOINT V008      4.     0.     1. 60.300        86.400
+JOINT 0006      5.    -1.     0. 81.500-35.000 27.850
+JOINT 0101      5.    -1.     0. 52.500-35.000  3.925
+JOINT 0205      5.    -1.     0. 52.500-35.000 28.925
+JOINT 0207      6.    -1.     0. 10.500-35.000  3.925
+JOINT 0208      6.    -1.     0. 10.500-35.000 28.925
+JOINT 0209      5.    -1.     0. 81.500-35.000-29.000
+JOINT UP01      8.     0.     2. 66.700-82.800 62.650
+JOINT 0210      5.     1.     0. 81.500 35.000 55.700
+JOINT 0211      5.     1.     0. 81.500 35.000 27.850
+JOINT 0212      5.     1.     0. 52.500 35.000  3.925
+JOINT 0213      5.     1.     0. 52.500 35.000 28.925
+JOINT 0214      6.     1.     0. 10.500 35.000  3.925
+JOINT 0215      6.     1.     0. 10.500 35.000 28.925
+JOINT 0216      5.     1.     0. 81.500 35.000-29.000
+JOINT 0104      5.    -1.     0. 81.500-49.000 55.700
+JOINT 0126      5.    -1.     0. 81.500-20.000 55.700
+JOINT 0178      5.     1.     0. 81.500 49.000 55.700
+JOINT 0179      5.     1.     0. 81.500 20.000 55.700
+JOINT Y004      4.     0.     3.    6.6     0.   59.1
+JOINT Y001      4.    -1.     3.    6.6   -35.   59.1
+JOINT YCO3      4.     0.     3.    6.6   -83.   59.1
+JOINT Y002      4.     1.     3.    6.6    35.   59.1
+JOINT YC04      4.     0.     3.    6.6    83.   59.1
+JOINT Y003      5.    -1.     0.    70.   -35.   75.4
+JOINT Y005      5.    -1.     0.   58.7   -35.   95.5
+JOINT Y007      5.     1.     0.    70.    35.   75.4
+JOINT Y008      5.     1.     0.   97.7    35.   72.8
+JOINT Y009      5.     1.     0.   58.7    35.   95.5
+JOINT Y010      3.    -1.     4.   76.5   -35.   10.4
+JOINT Y011      3.     1.     4.   76.5    35.   10.4
+JOINT YCO2      4.     1.     3.   27.7    35.   21.6
+JOINT YCO1      4.    -1.     3.   27.7   -35.   21.6
+LOAD
+* ---------------------------------
+* Dead Weight as Landed
+* ---------------------------------
+LOADCN0001   1.190                                                              
+DEAD
+DEAD      +X                                M         
+* ---------------------------------
+* Dead Weight as Landed
+* ---------------------------------
+LOADCN0002   1.190                                                              
+DEAD
+DEAD      +Y                                M         
+* ---------------------------------
+* Dead Weight as Landed
+* ---------------------------------
+LOADCN0003   1.190                                                              
+DEAD
+DEAD      +Z                                M         
+* ------------------------------------------------------------------------------
+* Production Flowline Bending Moment about Y. Axis
+* Bending Moment basic load case = -100kNm
+* ------------------------------------------------------------------------------
+LOADCN0004                                                                      
+LOAD   FA01                                  100.000        GLOB JOIN   FL_MY_O
+* ------------------------------------------------------------------------------
+* Production Flowline Bending Moment about Z. Axis
+* Bending Moment basic load case = -100kNm
+* ------------------------------------------------------------------------------
+LOADCN0005                                                                      
+LOAD   FA01                                         100.000 GLOB JOIN   FL_MZ_O
+* ------------------------------------------------------------------------------
+* Production Flowline Tension
+* Flowline tension basic load case = 1000kN
+* ------------------------------------------------------------------------------
+LOADCN0006                                                                      
+LOAD   FA01     1000.00                                     GLOB JOIN   FL_T_O
+* ------------------------------------------------------------------------------
+* Production Flowline Bending Moment about Y. Axis
+* Bending Moment basic load case = -100kNm
+* ------------------------------------------------------------------------------
+LOADCN0007                                                                      
+LOAD   0000                                  100.000        GLOB JOIN   FL_MY_I
+* ------------------------------------------------------------------------------
+* Production Flowline Bending Moment about Z. Axis
+* Bending Moment basic load case = -100kNm
+* ------------------------------------------------------------------------------
+LOADCN0008                                                                      
+LOAD   0000                                         100.000 GLOB JOIN   FL_MZ_I
+* ------------------------------------------------------------------------------
+* Production Flowline Tension
+* Flowline tension basic load case = 1000kN
+* ------------------------------------------------------------------------------
+LOADCN0009                                                                      
+LOAD   0000     1000.00                                     GLOB JOIN   FL_T_IN
+* ------------------------------
+* Buoy Load along +X Direction
+* ------------------------------
+LOADCN0010                                                                      
+LOAD   Y004     100.000                                     GLOB JOIN   BUOYX
+* ------------------------------
+* Buoy Load along +Y Direction
+* ------------------------------
+LOADCN0011                                                                      
+LOAD   Y004            100.000                              GLOB JOIN   BUOYY
+* ------------------------------
+* Buoy Load along +Z Direction
+* ------------------------------
+LOADCN0012                                                                      
+LOAD   Y004                   100.000                       GLOB JOIN   BUOYZ
+* ------------------------------
+* Entraped water Calc
+* ------------------------------
+LOADCN0013                                                                      
+DEAD
+DEAD      +Z                  -1.000        M         
+*
+LOADCN0014                                                                      
+DEAD
+DEAD      +Z  NFL             -1.000        M         
+END
+ **PHY1**T0007-0009 THRO0007-0175  MEM0175-0009  MEM
+ **PHY1**T0015-0017 THRO0015-0176  MEM0176-0017  MEM
+ **PHY1**T0034-0033 THRO0034-0075  MEM0075-0033  MEM
+ **PHY1**T0038-0037 THRO0038-0079  MEM0079-0037  MEM
+ **PHY1**T0060-0067 THRO0060-0022  MEM0022-0201  MEM0201-0067  MEM
+ **PHY1**T0068-0070 THRO0068-0203  MEM0203-0070  MEM
+ **PHY1**T0073-0077 THRO0073-0202  MEM0202-0077  MEM
+ **PHY1**T0079-0075 THRO0079-0092  MEM0092-0115  MEM0115-0075  MEM
+ **PHY1**T0081-0082 THRO0081-P239  MEMP239-0082  MEM
+ **PHY1**T0099-0132 THRO0099-0096  MEM0096-0132  MEM
+ **PHY1**T0134-0141 THRO0134-0181  MEM0181-0141  MEM
+ **PHY1**T0139-0140 THRO0139-0052  MEM0052-0140  MEM
+ **PHY1**T0149-0150 THRO0149-0182  MEM0182-0150  MEM
+ **PHY1**T0158-0157 THRO0158-0191  MEM0191-0157  MEM
+ **PHY1**T0173-0064 THRO0173-0200  MEM0200-0064  MEM
+ **PHY1**T0191-UP02 THRO0074-0192  MEM0192-0193  MEM0193-0123  MEM0123-0163  MEM
+ **PHY1**TEB01-0000 THROEB01-0002  MEM0002-0000  MEM
+ **PHY1**TP216-P213 THROP216-0180  MEM0180-P213  MEM
+ **PHY1**TT004-T005 THROT004-P237  MEMP237-T005  MEM
+ **PHY1**TT011-T012 THROT011-P003  MEMP003-T012  MEM
+ **PHY1**TT03A-T040 THROT03A-P238  MEMP238-P002  MEMP002-T040  MEM
+ **PHY1**TUP01-P239 THRO0196-0110  MEM0110-0194  MEM0194-0188  MEM0188-0083  MEM
+ **PHY1**TV002-P100 THROV002-0184  MEM0184-0186  MEM0186-0183  MEMP100-0183  MEM
+ **PHY1**T0071-0125 THRO0071-0006  MEM0006-0125  MEM
+ **PHY1**TYCO3-Y004 THROY001-YCO3  MEMYCO3-Y004  MEM
+ **PHY1**T0210-0217 THRO0210-Y007  MEMY007-YCO2  MEMYCO2-Y002  MEM
+ **PHY1**T0125-Y001 THRO0125-Y003  MEMY003-YCO1  MEMYCO1-Y001  MEM
+ **JNCV** 0 0 0 0 0 0 0
+ **GCOL** AUXM128 128 128 BNDM192 192 192 CAPM128 128 128 CY2M128 128 128 
+ **GCOL** EB1M128 128 128 EB2M128 128 128 EB3M128 128 128 EL1M192 192 192 
+ **GCOL** EL2M192 192 192 FA1M128 128 128 FA2M128 128 128 FA3M128 128 128 
+ **GCOL** HSBM128 128 128 HUBM128 128 128 LPDM128 128 128 MM1M66  100 111 
+ **GCOL** MM2M66  100 111 MM4M66  100 111 MMAM128 128 128 P02M192 192 192 
+ **GCOL** P10M192 192 192 P11M233 233 233 PCPM128 128 128 PI3M192 192 192 
+ **GCOL** PIPM192 192 192 PK2M128 128 128 PKKM128 128 128 PL2M128 128 128 
+ **GCOL** PLTM128 128 128 POUM0   64  128 PSAM128 128 128 R1 M192 192 192 
+ **GCOL** R2 M192 192 192 SUPM128 128 128 TABM192 192 192 TE1M192 192 192 
+ **GCOL** TE2M128 128 128 TEEM128 128 128 VLVM128 128 128 VV1M128 128 128 
+ **GCOL** VV2M128 128 128 VV3M128 128 128 VV4M128 128 128 VV5M128 128 128 
+ **GCOL** VV6M128 128 128 PINM192 192 192 PL3M128 128 128 10PP192 192 192 
+END
