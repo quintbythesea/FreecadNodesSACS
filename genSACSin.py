@@ -1,22 +1,29 @@
-#from core import *
+# from core import *
 import datetime
 import members
 import core
-#from database import *
+# from database import *
 import pandas as pd
 import os
 import database
-
 from pprint import pprint
+import sys
 
+assert database  # imported because of database vars
 
 """ 
 MAIN IMPORT MODULE - READS SACS FILES AND GENERATES REGISTER
 OPTION TO EXPORT WEIGHT FROM GROUPS WITH TUBES
 """
 
+print('\nRunning genSACSin...')
 
-SACSdir = os.getcwd()+os.sep+'input'
+# For macOS
+# os.chdir(app_dir = os.path.dirname(os.path.abspath(sys.argv[0])))
+SACSdir = os.getcwd() + os.sep + 'input'
+
+
+# print(os.getcwd(),'aqui')
 
 def subItem(mainList, indexList, entry):
     aux = [x for x in indexList if x[0].startswith(entry)]
@@ -35,7 +42,7 @@ def nowName():
     month = (date.strftime("%b")).upper()
     hour = ("%02d" % date.hour)
     minute = ("%02d" % date.minute)
-    return (month + day + ' - ' + hour + '.' + minute)
+    return month + day + ' - ' + hour + '.' + minute
 
 
 # PARSERS
@@ -46,7 +53,7 @@ def memberparser(member: list, prt=False):
     for line in member:
         if line[7:14] != 'OFFSETS' and len(line.split()) > 2:
             # print (line)
-            if prt == True:
+            if prt:
                 print('B' + str(i).zfill(3) + ': J1:' + line[7:11] + ', J2:' + line[11:15] + ', Sect:' + line[16:19])
             df.append(['B' + str(i).zfill(3), line[7:11].strip(), line[11:15].strip(), line[16:19].strip()])
             i += 1
@@ -92,7 +99,7 @@ def sectparser(sect: list, prt=False):
             # print (line)
             name = line[5:12].strip()
             sectype = line[15:18]
-            print(sectype)
+            # print(sectype)
 
             # TUBES
             if sectype == 'TUB':
@@ -101,7 +108,7 @@ def sectparser(sect: list, prt=False):
                 if prt:
                     print('Section', name, 'Type:', sectype, sep=' ')
                     print('D0', D0, 'Th:', th, sep=' ')
-                members.Tube(name,D0,th)
+                members.Tube(name, D0, th)
 
             # RHS
             elif sectype == 'BOX':
@@ -110,21 +117,20 @@ def sectparser(sect: list, prt=False):
                 th = float(line[55:60])
                 if prt:
                     print('Section', name, 'Type:', sectype, sep=' ')
-                    print('Height', height, 'Width:', width,'th:',th, sep=' ')
-                members.RecSection(name,height,th)
-                #df.append([name, sectype, D0, th])
+                    print('Height', height, 'Width:', width, 'th:', th, sep=' ')
+                members.RecSection(name, height, th)
+                # df.append([name, sectype, D0, th])
 
             # IBeams
-            elif sectype in ['Ibeams','WFC','PLG']:
+            elif sectype in ['Ibeams', 'WFC', 'PLG']:
                 height = float(line[49:55])
                 th_f = float(line[55:60])
                 width = float(line[60:66])
                 th_w = float(line[66:72])
                 if prt:
                     print('Section', name, 'Type:', sectype, sep=' ')
-                    print('height', height, 'width:', width,'th_f:',th_f,'th_w:',th_w, sep=' ')
-                members.Isection(name, height,width,th_f,th_w)
-
+                    print('height', height, 'width:', width, 'th_f:', th_f, 'th_w:', th_w, sep=' ')
+                members.Isection(name, height, width, th_f, th_w)
 
             # Channels
             elif sectype in 'Channel':
@@ -137,18 +143,16 @@ def sectparser(sect: list, prt=False):
                     print('height', height, 'width:', width, 'th_f:', th_f, 'th_w:', th_w, sep=' ')
                 members.ChanelSection(name, height, width, th_f, th_w)
 
-
             # Flatbars
             elif sectype == 'PRI':
                 height = float(line[49:55])
-                print (line)
+                # print(line)
                 th = float(line[60:66])
-                print (th)
+                # print(th)
                 if prt:
                     print('Section:', name, 'Type:', sectype, sep=' ')
                     print('height:', height, 'th:', th, sep=' ')
                 members.FlatBar(name, height, th)
-
 
             elif sectype == 'CON':
                 D1 = float(line[49:55])
@@ -156,11 +160,8 @@ def sectparser(sect: list, prt=False):
                 th = float(line[55:60])
                 if prt:
                     print('Section', name, 'Type:', sectype, sep=' ')
-                    print('D1', D1,'D2',D2, 'Th:', th, sep=' ')
-                members.Conical(name, D1,D2,th)
-
-
-
+                    print('D1', D1, 'D2', D2, 'Th:', th, sep=' ')
+                members.Conical(name, D1, D2, th)
 
     return df
 
@@ -192,7 +193,8 @@ def gruparser(grup: list, prt=False):
 for file in os.listdir(SACSdir):
     if file.startswith('sacinp') and not file.endswith('bak'):
         sacsin = SACSdir + os.sep + file
-        print (f"Runnning in {sacsin}")
+        print(f"\nDIR> {sacsin}\n\n")
+
 
 # print (SACSdir)
 # print(fileSelector)
@@ -202,7 +204,7 @@ for file in os.listdir(SACSdir):
 # Make function - text reader
 
 
-def process_sacsin(sacsin_file:str):
+def process_sacsin(sacsin_file: str):
     SACS = [line.rstrip('\n') for line in open(sacsin_file)] + ['TERMINUS']
     indexL = []
     notable = ('OPTIONS', 'LCSEL', 'SECT', 'GRUP', 'MEMBER', 'JOINT', 'LOADCNDEAD', 'LOADCNDM',
@@ -217,26 +219,26 @@ def process_sacsin(sacsin_file:str):
     # options = subItem(SACS, indexL, 'OPTIONS')
     # lcsel = subItem(SACS, indexL, 'LCSEL')
     sect = subItem(SACS, indexL, 'SECT')
-    #core.writeTxt('sect', sect)
+    # core.writeTxt('sect', sect)
     grup = subItem(SACS, indexL, 'GRUP')
-    #core.writeTxt('grup', grup)
+    # core.writeTxt('grup', grup)
     member = subItem(SACS, indexL, 'MEMBER')
-    #core.writeTxt('member', member)
+    # core.writeTxt('member', member)
     joint = subItem(SACS, indexL, 'JOINT')
-    #core.writeTxt('joint', joint)
+    # core.writeTxt('joint', joint)
     weight = subItem(SACS, indexL, 'WGTMEMANC')
     # loadDead = subItem(SACS, indexL, 'LOADCNDEAD')
     # loadVR = subItem(SACS, indexL, 'LOADCNVR')
     # loadDummy = subItem(SACS,indexL,'LOADCNDM')
-    #lcomb = subItem(SACS, indexL, 'LCOMB')
-    #end = subItem(SACS, indexL, 'END')
+    # lcomb = subItem(SACS, indexL, 'LCOMB')
+    # end = subItem(SACS, indexL, 'END')
 
-    sectparser(sect,prt=True)
-    #for line in sectparser(sect):
-        # print(line)
-        # print(len(line))
-        #print (line)
-        #members.Tube(line[0].strip(), round(line[2] * 10, 2), round(line[3] * 10, 2))
+    sectparser(sect, prt=False)
+    # for line in sectparser(sect):
+    # print(line)
+    # print(len(line))
+    # print (line)
+    # members.Tube(line[0].strip(), round(line[2] * 10, 2), round(line[3] * 10, 2))
 
     # Populate Class Points
     # 1print (joint)
@@ -254,20 +256,28 @@ def process_sacsin(sacsin_file:str):
 
     # Populate Beams Class
     # pp(SACSin.memberparser(SACSin.member))
-    pprint(members.reg)
-    for line in memberparser(member):#TODO CURRENTLY ONLY TUBES - ADD OTHER SECTIONS
-        pprint(line)
+    for line in memberparser(member):
         if '' in (groups[line[3]]['Section']):
-            #print (line[3])
-            #print(members.get_obj(line[3], 'Section'))
+            # print (line[3])
+            # print(members.get_obj(line[3], 'Section'))
             members.Beam(line[0],
                          members.get_obj(line[1].strip(), 'Point'),
                          members.get_obj(line[2].strip(), 'Point'),
-                         members.get_obj(groups[line[3]]['Section'],'Section'),
+                         members.get_obj(groups[line[3]]['Section'], 'Section'),
                          members.get_obj(groups[line[3]]['Material'], 'Material'))
 
             groups[line[3]]['Members'].append(line[0])
 
+    # Populate GROUPS Class
+    for group, elem in zip(groups, groups.values()):
+        if len(elem['Members']) > 0:
+            print(group, elem['Section'], elem['Members'])
+            beams = []
+            for beam_name in elem['Members']:
+                beams.append(members.get_obj(beam_name, 'Beam'))
+            #print(beams)
+            # Populate by getting data from 1st beam
+            members.Group(group, beams[0].material, beams[0].section, beams)
 
     return groups
 
@@ -289,8 +299,7 @@ def process_sacsin(sacsin_file:str):
 # pp(groups)
 
 
-
-def weightTubes(dict_groups:dict,groupsel=False, export=False):
+def weightTubes(dict_groups: dict, groupsel=False, export=False):
     df = []
 
     if not groupsel:
@@ -326,15 +335,16 @@ def weightTubes(dict_groups:dict,groupsel=False, export=False):
     df = pd.DataFrame(columns=['Group', 'Section', 'D0', 'Th', 'Length', 'Weight/m', 'TotalWeight'],
                       data=df)
     if export:
-        filename = os.getcwd()+ os.sep + 'WEIGHT TUBES' + nowName() + '.xlsx'
+        filename = os.getcwd() + os.sep + 'WEIGHT TUBES' + nowName() + '.xlsx'
         core.makedir(filename)
-        writer = pd.ExcelWriter(filename,engine='openpyxl')
+        writer = pd.ExcelWriter(filename, engine='openpyxl')
         df.to_excel(writer, sheet_name='Group Summary', index=False)
         writer.close()
 
     return df
 
-def weightreport(dict_groups:dict,groupsel=False, export=False):
+
+def weightreport(dict_groups: dict, groupsel=False, export=False):
     df = []
 
     if not groupsel:
@@ -343,46 +353,45 @@ def weightreport(dict_groups:dict,groupsel=False, export=False):
             if len(groups[group]['Members']) > 0:
                 groupsel.append(group)
 
-    #print (groupsel)
+    # print (groupsel)
 
     for group in groupsel:
 
         totalWeightGrp = 0
         totalLengthGrp = 0
-        #members.get_obj(groups[group]['Members'][0])
+        # members.get_obj(groups[group]['Members'][0])
         beamOne = members.get_obj(groups[group]['Members'][0])
-        #print (group,beamOne.name)
-        #print (beamOne.section)
+        # print (group,beamOne.name)
+        # print (beamOne.section)
 
         sectype = type(beamOne.section).__name__
 
         beamSection = beamOne.section.name
-        #beamD0 = beamOne.section.diam
-        #beamth = beamOne.section.thick
-        beamWeight = beamOne.section.area * beamOne.material.density *0.01
+        # beamD0 = beamOne.section.diam
+        # beamth = beamOne.section.thick
+        beamWeight = beamOne.section.area * beamOne.material.density * 0.01
 
-       #print (group)
+        # print (group)
 
         for beam in groups[group]['Members']:
             beam = members.get_obj(beam)
             totalWeightGrp += beam.weight()
             totalLengthGrp += beam.length()
 
-
-        attributes = ', '.join([f"{att}={round(val,2) if isinstance(val, (int, float)) else val}"
+        attributes = ', '.join([f"{att}={round(val, 2) if isinstance(val, (int, float)) else val}"
                                 for att, val in beamOne.section.__dict__.items() if att != 'name'])
 
-        df.append([group, beamSection,sectype,
+        df.append([group, beamSection, sectype,
                    round(totalLengthGrp, 2),
                    round(beamWeight, 2),
                    round(totalWeightGrp, 2),
                    attributes])
-    df = pd.DataFrame(columns=['Group', 'Section', 'Type','Length', 'Weight/m', 'TotalWeight','Att'],
+    df = pd.DataFrame(columns=['Group', 'Section', 'Type', 'Length', 'Weight/m', 'TotalWeight', 'Att'],
                       data=df)
     if export:
-        filename = os.getcwd()+ os.sep + 'WEIGHT REPORT ' + nowName() + '.xlsx'
+        filename = os.getcwd() + os.sep + 'WEIGHT REPORT ' + nowName() + '.xlsx'
         core.makedir(filename)
-        writer = pd.ExcelWriter(filename,engine='openpyxl')
+        writer = pd.ExcelWriter(filename, engine='openpyxl')
         df.to_excel(writer, sheet_name='Group Summary', index=False)
         writer.close()
 
@@ -390,8 +399,8 @@ def weightreport(dict_groups:dict,groupsel=False, export=False):
 
 
 groups = process_sacsin(sacsin)
-#pprint (groups)
-#weightgroup(groups,groupsel=[BR1 HSP JLT LG1 LTR P10 PAD POU SLE TEE VP YK2],export=True)
-weightreport(groups,export=True)
-weightTubes(groups,export=True)
-#print (members.reg)
+
+# weightgroup(groups,groupsel=[BR1 HSP JLT LG1 LTR P10 PAD POU SLE TEE VP YK2],export=True)
+# weightreport(groups, export=True)
+# weightTubes(groups, export=True)
+# print (members.reg)

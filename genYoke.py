@@ -49,9 +49,10 @@ def noyokepointonly():
                     f.write(line)
             filter = []
 
+
 # object_tree(members.reg)
-#rotation of YOKE from PLET X line
-rotations = [39,45,90-20,90-15,90,120]
+# rotation of YOKE from PLET X line
+rotations = [39, 45, 90 - 20, 90 - 15, 90, 120]
 # rotation node
 rot_point = members.get_obj('0125', 'Point')
 
@@ -88,8 +89,9 @@ def angle_in_xz_plane(point1, point2):
     return (angle_degrees)
 
 
-orig_rotation_angle = round(angle_in_xz_plane(rot_point.pos,point_array[0]))
-print ('Original Rotation ',orig_rotation_angle)
+orig_rotation_angle = round(angle_in_xz_plane(rot_point.pos, point_array[0]))
+print('Original Rotation ', orig_rotation_angle)
+
 
 def rotate_y_axis(points, origin, phi):
     # deg to radians
@@ -180,7 +182,7 @@ for angle in rotations:
     # input de 0 passa a 90
     if angle != round(orig_rotation_angle):
         rot = orig_rotation_angle - angle
-        print (rot)
+        print(rot)
         rotated_points = rotate_y_axis(point_array, rot_point, rot)
         texto = sacs_nodes(yoke_points, rotated_points)
 
@@ -188,6 +190,6 @@ for angle in rotations:
 
         with open(mydir + os.sep + 'Export' + os.sep + filename, 'w') as f:
             for line in texto:
-                f.write(line+'\n')
+                f.write(line + '\n')
 
 noyokepointonly()

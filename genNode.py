@@ -1,56 +1,54 @@
-
 import pandas as pd
 
-#--------------------------------------------INPUTS
-#Txt input file name from FreeCAD
-inputFile='Auxi'
-#Initial numbering for nodes
+# --------------------------------------------INPUTS
+# Txt input file name from FreeCAD
+inputFile = 'Auxi'
+# Initial numbering for nodes
 initialNode = 0
-#Node First letters
+# Node First letters
 fl = 'AX'
-#--------------------------------------------INPUTS
+# --------------------------------------------INPUTS
 
-txtPath = 'C:\\Users\\SAFCO108791\\Desktop\\'+inputFile+'.txt'
+txtPath = 'C:\\Users\\SAFCO108791\\Desktop\\' + inputFile + '.txt'
 
 with open(txtPath, "r") as file1:
-    pointList = [list(map(int,line.rstrip().split())) for line in file1]
+    pointList = [list(map(int, line.rstrip().split())) for line in file1]
 #
-df = pd.DataFrame(data=pointList,columns=("X","Y","Z"))
-df = df*0.001
-#df = df.round(3)
-df.fillna(0,inplace=True)
-df.sort_values(['Z','X'],inplace=True)
+df = pd.DataFrame(data=pointList, columns=("X", "Y", "Z"))
+df = df * 0.001
+# df = df.round(3)
+df.fillna(0, inplace=True)
+df.sort_values(['Z', 'X'], inplace=True)
 df.drop_duplicates(inplace=True)
-df.reset_index(drop=True,inplace=True)
+df.reset_index(drop=True, inplace=True)
 pointList = df.values.tolist()
 
+nodeList = [("%04d" % (x + initialNode)) for x in range(df.shape[0])]
+# node first letter
+nodeList = [fl + x[len(fl):] for x in nodeList]
+# print (nodeList)
+df = pd.concat([pd.Series(nodeList, name='Node'), df], axis=1)
 
+# print(df.to_string(index=False))
+print(df.to_markdown(index=False, tablefmt='simple_grid', floatfmt=".3f"))
+# print(df.to_markdown(index=False,tablefmt='simple_grid'))
 
-nodeList = [("%04d" % (x+initialNode)) for x in range(df.shape[0])]
-#node first letter
-nodeList = [ fl+x[len(fl):] for x in nodeList]
-#print (nodeList)
-df = pd.concat([pd.Series(nodeList, name='Node'),df],axis=1)
+# print(df.to_markdown())
 
-#print(df.to_string(index=False))
-print(df.to_markdown(index=False,tablefmt='simple_grid',floatfmt=".3f" ))
-#print(df.to_markdown(index=False,tablefmt='simple_grid'))
-
-#print(df.to_markdown())
-
-auxi = [[round(x,3) for x in line] for line in pointList]
+auxi = [[round(x, 3) for x in line] for line in pointList]
 SACSint = [[int(item) for item in line] for line in auxi]
-SACSfrac = [[round((x-y)*100,3) for x,y in zip(line1,line2)] for line1,line2 in zip(auxi,SACSint)]
+SACSfrac = [[round((x - y) * 100, 3) for x, y in zip(line1, line2)] for line1, line2 in zip(auxi, SACSint)]
 
-SACSdata = [x+y for x,y in zip(SACSint,SACSfrac)]
+SACSdata = [x + y for x, y in zip(SACSint, SACSfrac)]
 
-dfSACS = pd.DataFrame(data=SACSdata,columns=("Xint","Yint","Zint","Xfrc","Yfrc","Zfrc"))
+dfSACS = pd.DataFrame(data=SACSdata, columns=("Xint", "Yint", "Zint", "Xfrc", "Yfrc", "Zfrc"))
 
-#dfSACS.sort_values(['Zint','Zfrc'],inplace=True)
-#dfSACS.reset_index(drop=True,inplace=True)
-dfSACS = pd.concat([pd.Series(nodeList, name='Node'),dfSACS],axis=1)
+# dfSACS.sort_values(['Zint','Zfrc'],inplace=True)
+# dfSACS.reset_index(drop=True,inplace=True)
+dfSACS = pd.concat([pd.Series(nodeList, name='Node'), dfSACS], axis=1)
 
-#print(dfSACS.to_string(index=False))
+
+# print(dfSACS.to_string(index=False))
 
 def inputGeneratorNodes(df):
     for i in range(0, df.shape[0]):
@@ -78,5 +76,5 @@ def inputGeneratorNodes(df):
                 line = line + word
         print(line)
 
-inputGeneratorNodes(dfSACS)
 
+inputGeneratorNodes(dfSACS)

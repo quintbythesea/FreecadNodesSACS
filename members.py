@@ -1,4 +1,5 @@
-from math import pi,sqrt
+from math import pi, sqrt
+
 # Class lingo
 # type(x).__name__ >> returns name of instance x class
 # super().__init__(name) >> inherits super class
@@ -6,6 +7,7 @@ from math import pi,sqrt
 # Vars
 
 reg = {}
+
 
 # Classes
 
@@ -31,8 +33,61 @@ class Point(GlobalOps):
         self.z = z
         self.pos = (x, y, z)
 
-    def __sub__(self, other):
+    def __sub__(self, other):  # TODO replace by len
         return ((self.x - other.x) ** 2 + (self.y - other.y) ** 2 + (self.z - other.z) ** 2) ** 0.5
+
+    def __mul__(self, other):  # TODO replace by len
+        return tuple([self.x * other, self.y * other, self.z * other])
+
+
+class Node:
+    # nodes are not in register and are only for contruction purposes
+    def __init__(self, pos):
+        if isinstance(pos, Point):
+            self.x = pos.x
+            self.y = pos.y
+            self.z = pos.z
+            self.pos = pos.pos
+
+        else:  # List
+            self.x = pos[0]
+            self.y = pos[1]
+            self.z = pos[2]
+            self.pos = pos
+
+    def __sub__(self, other):
+        return [self.x - other.x, self.y - other.y, self.z - other.z]
+
+    def __mul__(self, vector):
+        return [self.x * vector.x, self.y * vector.y, self.z * vector.z]
+
+    def __len__(self, other):
+        return (self.x - other.x) ** 2 + (self.y - other.y) ** 2 + (self.z - other.z) ** 2
+
+
+class Vector:
+    def __init__(self, pointA, pointB):
+        self.dim = [pointB.x - pointA.x, pointB.y - pointA.y, pointB.z - pointA.z]
+        self.nodeA = Node(pointA.pos)
+        self.nodeB = Node(pointA.pos)
+        self.x = self.dim[0]
+        self.y = self.dim[1]
+        self.z = self.dim[2]
+        self.len = sqrt(self.x ** 2 + self.y ** 2 + self.z ** 2)
+        self.unit = [xyz / self.len for xyz in self.dim]
+
+    def __mul__(self, other):
+        return [xyz * other for xyz in self.unit]
+
+    def node_along(self, point='A', dist=1):
+        if point == 'A':
+            point = self.nodeA
+        if point == 'B':
+            point = self.nodeB
+        return Node([k1 + k2 for k1, k2 in zip(point.pos, self * dist)])
+
+    def scale(self, factor):  # TODO
+        print('scale')
 
 
 class Material(GlobalOps):
@@ -88,6 +143,7 @@ class ChanelSection(GlobalOps):
         self.area = (width * tf * 2 + (height - tf) * tw) * 0.01
         # self.material = material
 
+
 class FlatBar(GlobalOps):
     def __init__(self, name, height, th):
         super().__init__(name)
@@ -96,8 +152,9 @@ class FlatBar(GlobalOps):
         self.area = (height * th) * 0.01
         # self.material = material
 
+
 class Conical(GlobalOps):
-    def __init__(self, name, diam1,diam2, thick):
+    def __init__(self, name, diam1, diam2, thick):
         super().__init__(name)
         self.diam1 = diam1
         self.diam2 = diam2
@@ -105,22 +162,21 @@ class Conical(GlobalOps):
 
         # Equivalent area
         diam_eq = (diam1 + diam2) / 2
-        self.area =pi * ((diam_eq / 2) ** 2 - ((diam_eq - 2 * thick) / 2) ** 2) * 0.01
+        self.area = pi * ((diam_eq / 2) ** 2 - ((diam_eq - 2 * thick) / 2) ** 2) * 0.01
         # Section area
-        self.area1 =pi * ((diam1 / 2) ** 2 - ((diam1 - 2 * thick) / 2) ** 2) * 0.01
+        self.area1 = pi * ((diam1 / 2) ** 2 - ((diam1 - 2 * thick) / 2) ** 2) * 0.01
         self.area2 = pi * ((diam2 / 2) ** 2 - ((diam2 - 2 * thick) / 2) ** 2) * 0.01
 
-    def vol(self,lth:float):
-        #len in m
-        r1 = self.diam1*0.5
-        r2 = self.diam2*0.5
+    def vol(self, lth: float):
+        # len in m
+        r1 = self.diam1 * 0.5
+        r2 = self.diam2 * 0.5
         v_outer = (1 / 3) * pi * lth * (r2 ** 2 + r2 * r1 + r1 ** 2)
         r1 = r1 - self.th
         r2 = r2 - self.th
         v_inner = (1 / 3) * pi * lth * (r2 ** 2 + r2 * r1 + r1 ** 2)
 
         return v_outer - v_inner
-
 
 
 class Beam(GlobalOps):
@@ -137,11 +193,18 @@ class Beam(GlobalOps):
         return self.end - self.start
 
     def weight(self):
-        if isinstance(self.section,Conical):
+        if isinstance(self.section, Conical):
             return self.section.vol(self.length()) * self.material.density * 0.0001
         else:
-            return self.length() * self.section.area * self.material.density* 0.01
+            return self.length() * self.section.area * self.material.density * 0.01
 
+
+class Group(GlobalOps):
+    def __init__(self, name: str, material, section, elem: list):
+        super().__init__(name)
+        self.material = material
+        self.section = section
+        self.elem = elem
 
 
 class Joint(GlobalOps):
@@ -151,14 +214,17 @@ class Joint(GlobalOps):
         self.beams = beams
 
 
-def jointGen():
+def jointpopulate():
     count = 0
     for point in reg['Point']:
         aux = list()
         for beam in reg['Beam']:
             if beam.end == point or beam.start == point:
-                aux.append(beam)
-        if len(aux) > 1:
+                if isinstance(beam.section, Tube):
+                    aux.append(beam)
+        # change to 1 for all 2 beam insterections
+        # if len(aux) > 1:
+        if len(aux) > 2:
             count += 1
             Joint('J' + str(count), point, aux)
 
@@ -168,15 +234,14 @@ def get_obj(name: str, group='Beam'):
         aux = next((x for x in reg[group] if x.name == name), None)
         return aux
     else:
-        print('trying to find',name)
-        for section in ['Conical','Isection','Tube','RecSection','ChanelSection','FlatBar']:
+        # print('trying to find', name)
+        for section in ['Conical', 'Isection', 'Tube', 'RecSection', 'ChanelSection', 'FlatBar']:
             if section in reg.keys():
-                #print ('section found')
+                # print ('section found')
                 aux = next((x for x in reg[section] if x.name == name), None)
                 if aux is not None:
                     return aux
-        print ('Section not found')
-
+        print('Section not found')
 
 
 def addNewMaterials(fy, emod, dens):
