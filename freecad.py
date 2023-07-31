@@ -1,6 +1,13 @@
 # Step file ops
 import members
 import random
+import colormaps
+from numpy import linspace
+
+import openpyxl
+from openpyxl.utils.dataframe import dataframe_to_rows
+
+import pandas as pd
 
 
 # make allpoint
@@ -34,36 +41,68 @@ def beamGen(reg, sections=False, colour=False):
     return lst
 
 
-def beamgroup(reg):
+def beamgroup(reg, sections=True, colour=False, mix=False, export=False):
+    lst = []
+    # colour = (120, 120, 120)
+    group_selection = ['BR1', 'HSP', 'JLT', 'LG1', 'LTR', 'PAD', 'SLE', 'VP', 'YK2', 'YK1']
 
-    lst=[]
+    def coloursel(n, total=len(group_selection), colourmap=colormaps.Spectral, invert=False):
+        # print(int(n / total * len(colourmap)))
+        #
+        sequence = linspace(0, len(colourmap) - 1, total)
+        if invert:
+            colourmap = colourmap[::-1]
 
-    viridis = [(68, 1, 84), (72, 21, 103), (72, 38, 119), (69, 55, 129), (64, 71, 136), (57, 86, 140),
-                (51, 99, 141), (45, 112, 142), (40, 125, 142), (35, 138, 141), (31, 150, 139), (32, 163, 135),
-                (41, 175, 127), (60, 187, 117), (85, 198, 103), (115, 208, 85), (149, 216, 64), (184, 222, 41),
-                (220, 227, 25), (253, 231, 37)]
+        expanded_seq = [int(value) for value in sequence]
+        print(len(colourmap), n, expanded_seq[n])
 
-    def coloursel(n,total=len(reg['Group']),colourmap=viridis):
-        print(len(colourmap),n,int((n/total)*(len(colourmap))))
-        return colourmap[int((n/total)*(len(colourmap)-1))]
-        #return colourmap[random.randint(0,len(colourmap)-1)]
+        return colourmap[expanded_seq[n]]
 
+    if mix:
+        size = len(group_selection)
+        sequence = random.sample(list(range(size)), size)
+        print(sequence)
 
+    data = []
+    for i, group in enumerate(reg['Group']):
+        if group.name in group_selection:
 
-    for i,group in enumerate(reg['Group']):
-        for j,beam in enumerate(group.elem):
-            if isinstance(beam.section, members.Tube):
-                lst.append(
-                    ['Line0' + str(i)+str(j) + ' = Draft.makeWire([' + 'p' + beam.start.name + ',p' + beam.end.name + '])'])
-                lst.append(['Pipe=Arch.makePipe(Line0' + str(i)+str(j) + ',' + str(round(beam.section.diam * 10, 2))+')'])
-                lst.append([f'print (type(Pipe))'])
-                lst.append([f'Pipe.WallThickness={str(round(beam.section.thick * 10, 2))}'])
-                lst.append([f'Pipe.ViewObject.ShapeColor = {coloursel(i)}'])
+            if colour:
+                if mix:
+                    colour = coloursel(sequence[group_selection.index(group.name)])
+                else:
+                    colour = coloursel(group_selection.index(group.name))
+                    print(colour)
+
+            beam0 = group.elem[0]
+
+            data.append([group.name, 'Group Name', 'Material', beam0.section.diam, beam0.section.thick, colour])
+
+            for j, beam in enumerate(group.elem):
+                if isinstance(beam.section, members.Tube):
+
+                    lst.append(
+                        ['Line0' + str(i) + str(
+                            j) + ' = Draft.makeWire([' + 'p' + beam.start.name + ',p' + beam.end.name + '])'])
+
+                    if sections:
+                        diameter = round(beam.section.diam * 10, 2)
+                    else:
+                        diameter = 30
+
+                    lst.append(['Pipe=Arch.makePipe(Line0' + str(i) + str(j) + ',' + str(diameter) + ')'])
+
+                    if sections:
+                        lst.append([f'Pipe.WallThickness={str(round(beam.section.thick * 10, 2))}'])
+
+                        lst.append([f'Pipe.ViewObject.ShapeColor = {colour}'])
+
+    export_list_to_excel(data, 'output.xlsx')
+
     return lst
 
-
-        # read from excel or txt - create folder with joints
-        # export to abaqus #TODO MAYBE
+    # read from excel or txt - create folder with joints
+    # export to abaqus #TODO MAYBE
 
 
 def jointGen(reg, nodelst=None, inputfile='xls', sections=False, stub_len=2, folder=False):
@@ -94,7 +133,9 @@ def jointGen(reg, nodelst=None, inputfile='xls', sections=False, stub_len=2, fol
                         print('stub check')
                         # print(stub_len*beam.section.diam*0.01,beam.length())
 
-                        stub = min(stub_len * beam.section.diam * 0.01, beam.length())
+                        # stub =stub_len * beam.section.diam * 0.01
+                        stub = min(beam.length(), 0.8)
+                        print('stub used', stub)
                         if beam.start == joint.point:
                             vec = members.Vector(beam.start, beam.end)
                         else:
@@ -168,10 +209,13 @@ label.ViewObject.Frame = 'Rectangle' '''
 
     #   cases = {'1001': ['0001', '0002', '0007', '0004', '0005']}
 
-    cases = {'1001': ['0001', '0002', '0003', '0004', '0005'],
-             '1002': ['0005', '0006', '0007', '0008', '0009'],
-             '1003': ['0010', '0011', '0012', '0013', '0014'],
-             '1004': ['0015', '0016', '0017', '0018', '0019']}
+    cases = {'1000': ['0089', '0053', '0170', '0164', '0075'],
+             '2002': ['0064', '0067', '0077', '0070', '0048'],
+             '3100': ['0048', '0056', '0055', '0169', '0057'],
+             '3200': ['0048', '0059', '0056', '0055', '0169'],
+             '3300': ['0048', '0056', '0055', '0057', '0058'],
+             '3600': ['0048', '0056', '0055', '0058', '0057'],
+             '4000': ['0089', '0170', '0053', '0164', '0075']}
 
     rotation = [f'rotation = FreeCAD.Rotation(FreeCAD.Vector(1.00, 0.00, 0.00), 90.00)']
 
@@ -208,8 +252,35 @@ def extendPoint(pointA, pointB, dist=0, mode=1):
 
     return vec.node_along(point=point, dist=dist)
 
-# Pipe = Arch.makePipe(Line, 200)
-# FreeCAD.ActiveDocument.recompute()
 
-# Pipe2 = Arch.makePipe(diameter=120, length=3000)
-# FreeCAD.ActiveDocument.recompute()
+import openpyxl
+from openpyxl.utils.dataframe import dataframe_to_rows
+
+def rgb_to_hex(rgb):
+    return '%02x%02x%02x' % rgb
+
+def export_list_to_excel(data_list, output_filename):
+    # Create a DataFrame from the list
+    df = pd.DataFrame(data_list,
+                      columns=['Group', 'Group Element', 'Material', 'Diameter', 'Thickness', 'Colour Code'])
+
+    # Convert the RGB code to a string representation
+    df['Colour Code'] = df['Colour Code'].apply(rgb_to_hex)
+
+    # Create an Excel workbook and select the active sheet
+    workbook = openpyxl.Workbook()
+    sheet = workbook.active
+
+    # Write the DataFrame to the sheet
+    for row in dataframe_to_rows(df, index=False, header=True):
+        sheet.append(row)
+
+    # Apply fill color to the last cell of each row
+    for row in sheet.iter_rows(min_row=2, max_row=sheet.max_row, min_col=sheet.max_column, max_col=sheet.max_column):
+        cell = row[0]
+        rgb_code = cell.value
+        fill = openpyxl.styles.PatternFill(start_color=rgb_code, end_color=rgb_code, fill_type="solid")
+        cell.fill = fill
+
+    # Save the workbook
+    workbook.save(output_filename)
