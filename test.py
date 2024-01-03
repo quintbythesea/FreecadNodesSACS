@@ -58,6 +58,7 @@ def stringCount(string, sep=False):
     core.Color.prtOKRANDOM(aux)
     return aux
 
+stringCount('JOINT 0189      7.    -2.     0. 63.500       -17.54')
 
 # Section generator
 file = os.getcwd() + os.sep + 'sect.txt'
@@ -101,7 +102,12 @@ def textCount(filePath):
 import pandas as pd
 
 # Read the Excel file
-df = pd.read_excel(os.getcwd() + os.sep + 'GEN' + os.sep + 'Summary JUN15 - 16.36.xlsx', sheet_name='Global Status',
+
+for excelname in os.listdir(os.getcwd() + os.sep + 'GEN'):
+    if excelname.endswith(".xlsx"):
+        break
+
+df = pd.read_excel(os.getcwd() + os.sep + 'GEN' + os.sep + excelname, sheet_name='Global Status',
                    header=None)
 
 
@@ -125,16 +131,21 @@ def iterator(df, col_num):
     # Append the last list if it is not empty
     if current_list:
         node_lists.append(current_list)
-
+    #print (node_lists)
     return node_lists
 
+# Print screenshot sequence
+print('\n\nd = 280')
+for seq, seq2 in zip(iterator(df, 7), iterator(df, 6)):
+    #print (seq2)
+    seq[0] = str(seq2[1])[:2] + '00prt'
+    print(f"whole('{seq[0]}',{seq[1:]}, 370, d, 80)\nd += 24")
 
-# print('\n\nd = 280')
-# for seq, seq2 in zip(iterator(df, 7), iterator(df, 6)):
-#     # print (seq2)
-#     seq[0] = str(seq2[1])[:2] + '00prt'
-#     print(f"whole('{seq[0]}',{seq[1:]}, 370, d, 80)\nd += 24")
-
+#Print NODE freecad data
+for seq, seq2 in zip(iterator(df, 7), iterator(df, 6)):
+    #print (seq2)
+    seq[0] = str(seq2[1])[:2] + '00'
+    print(f"'{seq[0]}':{seq[1:]},")
 
 list_of_colours = ['Accent', 'Accent_r', 'Blues', 'Blues_r', 'BrBG', 'BrBG_r', 'BuGn', 'BuGn_r', 'BuPu', 'BuPu_r',
                    'CMRmap', 'CMRmap_r', 'Dark2', 'Dark2_r', 'GnBu', 'GnBu_r', 'Greens', 'Greens_r', 'Greys', 'Greys_r',
@@ -180,8 +191,8 @@ def colorwheel(colormap, num_colors):
     print(f'{colormap} = {aux}')
 
 
-for color in list_of_colours:
-    colorwheel(color, 100)
+#for color in list_of_colours:
+#    colorwheel(color, 100)
 
 from openpyxl import Workbook
 from openpyxl.styles import PatternFill
@@ -206,4 +217,4 @@ def change_cell_colors(rgb_list, output_file):
 rgb_list = colormaps.turbo
 output_file = "colored_cells.xlsx"
 
-change_cell_colors(rgb_list, output_file)
+#change_cell_colors(rgb_list, output_file)

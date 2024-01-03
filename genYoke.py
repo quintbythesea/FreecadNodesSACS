@@ -7,12 +7,13 @@ import numpy as np
 
 # import members
 
+inputdir = os.getcwd() + os.sep + 'Input'
 mydir = os.getcwd() + os.sep + 'YOKE'
 
 
 def yokepointonly():
     filter = []
-    for file in os.listdir(mydir):
+    for file in os.listdir(inputdir):
         if file.startswith('sacinp'):
             txtPath = mydir + os.sep + file
             with open(txtPath, "r") as file1:
@@ -32,9 +33,9 @@ def yokepointonly():
 
 def noyokepointonly():
     filter = []
-    for file in os.listdir(mydir):
+    for file in os.listdir(inputdir):
         if file.startswith('sacinp'):
-            txtPath = mydir + os.sep + file
+            txtPath = inputdir + os.sep + file
             with open(txtPath, "r") as file1:
                 for line in file1:
                     # print (line[:5])
@@ -52,9 +53,12 @@ def noyokepointonly():
 
 # object_tree(members.reg)
 # rotation of YOKE from PLET X line
-rotations = [39, 45, 90 - 20, 90 - 15, 90, 120]
+#rotations = [36.5,40,43, 45, 90 - 20, 90 - 15, 90, 120]
+rotations = [48, 90 - 20, 90 - 15, 90, 120]
+#rotations = [90]
 # rotation node
 rot_point = members.get_obj('0125', 'Point')
+print ('origin pos',rot_point.pos)
 
 # print(rn.pos)
 yoke_points = []
@@ -86,10 +90,10 @@ def angle_in_xz_plane(point1, point2):
     # Convert the angle to degrees
     angle_degrees = np.degrees(angle)
 
-    return (angle_degrees)
+    return angle_degrees
 
 
-orig_rotation_angle = round(angle_in_xz_plane(rot_point.pos, point_array[0]))
+#orig_rotation_angle = round(angle_in_xz_plane(rot_point.pos, point_array[0]))
 print('Original Rotation ', orig_rotation_angle)
 
 
@@ -131,9 +135,11 @@ def sacs_nodes(points, new_coord):
 
     # print(df.to_markdown())
 
-    auxi = [[round(x, 3) for x in line] for line in new_coord]
+    #auxi = [[round(x, 3) for x in line] for line in new_coord]
+    auxi = [[x for x in line] for line in new_coord]
     SACSint = [[int(item) for item in line] for line in auxi]
-    SACSfrac = [[round((x - y) * 100, 3) for x, y in zip(line1, line2)] for line1, line2 in zip(auxi, SACSint)]
+    #SACSfrac = [[round((x - y) * 100, 3) for x, y in zip(line1, line2)] for line1, line2 in zip(auxi, SACSint)]
+    SACSfrac = [[((x - y) * 100) for x, y in zip(line1, line2)] for line1, line2 in zip(auxi, SACSint)]
 
     SACSdata = [x + y for x, y in zip(SACSint, SACSfrac)]
 
@@ -164,7 +170,7 @@ def sacs_nodes(points, new_coord):
                 else:
                     word = j[0]
                     word = df.iloc[i, df.columns.get_loc(word)]
-                    word = round(word, 2)
+                    word = round(word, 3)
                     if word - int(word) == 0:
                         word = format(word, str(j[1] - 1) + 'g') + "."
                     else:
@@ -180,6 +186,7 @@ def sacs_nodes(points, new_coord):
 
 for angle in rotations:
     # input de 0 passa a 90
+    print('ROTACAO - ',angle,'\n')
     if angle != round(orig_rotation_angle):
         rot = orig_rotation_angle - angle
         print(rot)

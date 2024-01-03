@@ -23,7 +23,7 @@ def pointCloud(reg):
     return lst
 
 
-def beamGen(reg, sections=False, colour=False):
+def beamGen(reg, sections=False, colour='Grey'):
     # sections = 50 makes all pipes with 50 diam
     lst = []
 
@@ -38,13 +38,19 @@ def beamGen(reg, sections=False, colour=False):
         # General pipe section for all beams
         elif isinstance(sections, list):
             lst.append(['Arch.makePipe(Line' + str(i) + ',' + str(sections[0]) + ')'])
-    return lst
+        if colour is not False:
+            lst.append([f'Pipe.ViewObject.ShapeColor = (128,128,128)'])
+            lst.append([f'Pipe.ViewObject.LineColor = (60, 60, 60)'])
+        return lst
 
 
-def beamgroup(reg, sections=True, colour=False, mix=False, export=False):
+def beamgroup(reg, sections=True, colour_opt=False, mix=False, export=False, groups=True):
     lst = []
     # colour = (120, 120, 120)
-    group_selection = ['BR1', 'HSP', 'JLT', 'LG1', 'LTR', 'PAD', 'SLE', 'VP', 'YK2', 'YK1']
+    #group_selection = ['BR1', 'HSP', 'JLT', 'LG1', 'LTR', 'PAD', 'SLE', 'VP', 'YK1', 'YK2', 'YK3', 'SLG','WOO']
+    group_selection = ['BR1', 'HSP', 'JLT', 'LG1', 'LTR', 'PAD', 'SLE', 'VP', 'YK1', 'YK2', 'YK3']
+    if not groups:
+        group_selection = [x.name for x in reg['Group']]
 
     def coloursel(n, total=len(group_selection), colourmap=colormaps.Spectral, invert=False):
         # print(int(n / total * len(colourmap)))
@@ -64,19 +70,26 @@ def beamgroup(reg, sections=True, colour=False, mix=False, export=False):
         print(sequence)
 
     data = []
+
     for i, group in enumerate(reg['Group']):
         if group.name in group_selection:
 
-            if colour:
+            if colour_opt :
                 if mix:
                     colour = coloursel(sequence[group_selection.index(group.name)])
+                    print ('C1',colour)
                 else:
                     colour = coloursel(group_selection.index(group.name))
-                    print(colour)
+                    print('C2',colour)
+
+            elif colour_opt is False:  # Grey
+                colour = (128, 128, 128)
 
             beam0 = group.elem[0]
 
-            data.append([group.name, 'Group Name', 'Material', beam0.section.diam, beam0.section.thick, colour])
+            if isinstance(beam0.section, members.Tube):
+                data.append([group.name, 'Group Name', 'Material', beam0.section.diam, beam0.section.thick, colour])
+            # data.append([group.name, 'Group Name', 'Material', beam0.section.name, beam0.section.thick, colour])
 
             for j, beam in enumerate(group.elem):
                 if isinstance(beam.section, members.Tube):
@@ -84,7 +97,6 @@ def beamgroup(reg, sections=True, colour=False, mix=False, export=False):
                     lst.append(
                         ['Line0' + str(i) + str(
                             j) + ' = Draft.makeWire([' + 'p' + beam.start.name + ',p' + beam.end.name + '])'])
-
                     if sections:
                         diameter = round(beam.section.diam * 10, 2)
                     else:
@@ -97,7 +109,79 @@ def beamgroup(reg, sections=True, colour=False, mix=False, export=False):
 
                         lst.append([f'Pipe.ViewObject.ShapeColor = {colour}'])
 
-    export_list_to_excel(data, 'output.xlsx')
+                elif isinstance(beam.section, members.FlatBar):  # EDITING
+                    lst.append(
+                        ['Line0' + str(i) + str(
+                            j) + ' = Draft.makeWire([' + 'p' + beam.start.name + ',p' + beam.end.name + '])'])
+
+                    # if sections:
+
+                    diameter = 30
+
+                    lst.append(['Pipe=Arch.makePipe(Line0' + str(i) + str(j) + ',' + str(diameter) + ')'])
+
+                    if sections:
+                        # make flatbar
+
+                        lst.append([f"section = Arch.makeProfile(profile=[0, 'REC', '{beam.section.name}', 'R',"
+                                    f" {beam.section.th * 10}, {beam.section.height * 10}])"])
+                        # makeProfile(profile=[0, 'REC', 'REC100x100', 'R', 100, 100]):
+                        # lst.append(f'Pipe.Section'])
+                        lst.append([f'Pipe.Profile=section'])
+                        lst.append([f'Pipe.ViewObject.ShapeColor = {colour}'])
+
+                elif isinstance(beam.section, members.Isection):  # EDITING
+
+
+                    #members.Isection(name, height, width, th_f, th_w)
+                    lst.append(
+                        ['Line0' + str(i) + str(
+                            j) + ' = Draft.makeWire([' + 'p' + beam.start.name + ',p' + beam.end.name + '])'])
+
+                    # if sections:
+
+                    diameter = 30
+
+                    lst.append(['Pipe=Arch.makePipe(Line0' + str(i) + str(j) + ',' + str(diameter) + ')'])
+
+                    if sections:
+                        # make Isection
+
+                        lst.append([f"section = Arch.makeProfile(profile=[0, 'I', '{beam.section.name}', 'H',"
+                                    f"{beam.section.height * 10},{beam.section.width*10},{beam.section.tw*10},"
+                                    f"{beam.section.tf*10}])"])
+                        # makeProfile(profile=[0, 'REC', 'REC100x100', 'R', 100, 100]):
+                        # lst.append(f'Pipe.Section'])
+                        lst.append([f'Pipe.Profile=section'])
+                        lst.append([f'Pipe.ViewObject.ShapeColor = {colour}'])
+
+                elif isinstance(beam.section, members.RecSection):  # EDITING
+
+
+                    #members.Isection(name, height, width, th_f, th_w)
+                    lst.append(
+                        ['Line0' + str(i) + str(
+                            j) + ' = Draft.makeWire([' + 'p' + beam.start.name + ',p' + beam.end.name + '])'])
+
+                    # if sections:
+
+                    diameter = 30
+
+                    lst.append(['Pipe=Arch.makePipe(Line0' + str(i) + str(j) + ',' + str(diameter) + ')'])
+
+                    if sections:
+                        # make Isection
+
+                        lst.append([f"section = Arch.makeProfile(profile=[0, 'RHS', '{beam.section.name}', 'RH',"
+                                    f"{beam.section.height * 10},{beam.section.width*10},{beam.section.th*10}])"])
+                        # makeProfile(profile=[0, 'REC', 'REC100x100', 'R', 100, 100]):
+                        # lst.append(f'Pipe.Section'])
+                        lst.append([f'Pipe.Profile=section'])
+                        lst.append([f'Pipe.ViewObject.ShapeColor = {colour}'])
+
+
+    if export:
+        export_list_to_excel(data, 'Section_Colors.xlsx')
 
     return lst
 
@@ -107,11 +191,11 @@ def beamgroup(reg, sections=True, colour=False, mix=False, export=False):
 
 def jointGen(reg, nodelst=None, inputfile='xls', sections=False, stub_len=2, folder=False):
     lst = []
-    print(stub_len)
+    print('Stub len', stub_len)
     # INPUT TYPE - xls,or txt
     if inputfile == 'xls':
         # get from excel
-        print('excel')
+        print('From excel')
     else:
         # get input from txt,csv
         print('Nodes from txt')
@@ -122,11 +206,17 @@ def jointGen(reg, nodelst=None, inputfile='xls', sections=False, stub_len=2, fol
             nodelst.append(joint.point.name)
     # DO for selected joints
     i = len(members.reg['Beam']) + 1
-    print('entrou')
+    # print('entrou')
+
     for node_name in nodelst:
+        print('Generate Node', node_name)
+
         for joint in reg['Joint']:
             # print(node_name,joint.point.name)
+
             if joint.point.name == node_name:
+                print(joint.point.name)
+                # print(joint.name)
                 for beam in joint.beams:
                     # Check which stub length to use
                     if hasattr(beam.section, "diam"):
@@ -160,6 +250,7 @@ def jointGen(reg, nodelst=None, inputfile='xls', sections=False, stub_len=2, fol
                     if folder:
                         lst.append([f'folder.addObject(Wire)'])
                     i += 1
+                break
     # ('aqui', lst)
     return lst
 
@@ -207,21 +298,31 @@ label.ViewObject.LineColor = {black}  # Set the default line color (black)
 label.ViewObject.FontName = "Arial"  # Set the default font name (adjust as needed)
 label.ViewObject.Frame = 'Rectangle' '''
 
-    #   cases = {'1001': ['0001', '0002', '0007', '0004', '0005']}
 
-    cases = {'1000': ['0089', '0053', '0170', '0164', '0075'],
-             '2002': ['0064', '0067', '0077', '0070', '0048'],
-             '3100': ['0048', '0056', '0055', '0169', '0057'],
-             '3200': ['0048', '0059', '0056', '0055', '0169'],
-             '3300': ['0048', '0056', '0055', '0057', '0058'],
-             '3600': ['0048', '0056', '0055', '0058', '0057'],
-             '4000': ['0089', '0170', '0053', '0164', '0075']}
+# CASES are generated by test.bat from analysis directory
+
+
+    # cases = {
+    #     '1000': ['0170', '0089', '0053', '0164', '0134'],
+    #     '2000': ['0240', '0127', '0057', '0058', '0048'],
+    #     '3100': ['0048', '0055', '0056', '0057', '0058'],
+    #     '3200': ['0048', '0055', '0056', '0057', '0058'],
+    #     '3300': ['0048', '0055', '0056', '0057', '0058'],
+    #     '3600': ['0048', '0055', '0056', '0057', '0058'],
+    #     '4000': ['0170', '0089', '0053', '0164', '0134']}
+
+    cases = {
+        '6200': ['0161', '0134', '0253', '0055', '0056']}
+
+    # cases = {'5000': ['0008', '0054', '0122', '0121', '0041'],
+    #         '5200': ['0172', '0107', '0108', '0080', '0008']}
 
     rotation = [f'rotation = FreeCAD.Rotation(FreeCAD.Vector(1.00, 0.00, 0.00), 90.00)']
 
     for case in cases:
         lst.append(f'\nfolder = doc.addObject("App::DocumentObjectGroup","CASE {case}")')
         for node in cases[case]:
+            print('Processing Node - ' + node)
             node = members.get_obj(node, 'Point')
             text_position = tuple([(c1 + c2) * 1000 for c1, c2 in zip(node.pos, delta_text)])
             lst.append([f'position = FreeCAD.Vector{node * 1000}'])
@@ -256,8 +357,10 @@ def extendPoint(pointA, pointB, dist=0, mode=1):
 import openpyxl
 from openpyxl.utils.dataframe import dataframe_to_rows
 
+
 def rgb_to_hex(rgb):
     return '%02x%02x%02x' % rgb
+
 
 def export_list_to_excel(data_list, output_filename):
     # Create a DataFrame from the list

@@ -125,11 +125,12 @@ class Isection(GlobalOps):
 
 class RecSection(GlobalOps):
 
-    def __init__(self, name, height, width):
+    def __init__(self, name, height, width,th):
         super().__init__(name)
         self.height = height
         self.width = width
-        self.area = (height * width) * 0.01
+        self.th = th
+        self.area = (height-th+width-th)*2*th * 0.01
         # self.material = material
 
 
@@ -215,6 +216,8 @@ class Joint(GlobalOps):
 
 
 def jointpopulate():
+    print('USED ------------------------------------------------------------')
+
     count = 0
     for point in reg['Point']:
         aux = list()
@@ -228,6 +231,20 @@ def jointpopulate():
             count += 1
             Joint('J' + str(count), point, aux)
 
+
+def jointadd(nodelist:list):
+    count = len(reg.get('Joint', {}))
+    for joints in nodelist:
+        for point in reg['Point']:
+            aux = list()
+            for beam in reg['Beam']:
+                if beam.end == point or beam.start == point:
+                    if isinstance(beam.section, Tube):
+                        aux.append(beam)
+            # change to 1 for all 2 beam insterections
+            # if len(aux) > 1:
+            count += 1
+            Joint('J' + str(count), point, aux)
 
 def get_obj(name: str, group='Beam'):
     if group != 'Section':

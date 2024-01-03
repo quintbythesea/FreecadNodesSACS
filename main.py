@@ -21,8 +21,10 @@ import genSACSin
 
 import freecad
 
-members.jointpopulate()
-from pprint import pprint
+#members.jointpopulate()
+#Adicionar Nos de 2 vigas que nao sao detectados automaticamente
+members.jointadd(['0134'])
+
 
 # for joint in reg['Joint']:
 #    print(joint.point.name)
@@ -35,17 +37,27 @@ txtfile += freecad.pointCloud(reg)
 
 #txtfile += freecad.beamGen(reg, sections=True)
 #txtfile += freecad.beamGen(reg, sections=[20])
+#txtfile += freecad.beamgroup(reg,sections=True,colour=False)
+
+#ENABLE FOR COLOURED SECTION VIEW
+#txtfile += freecad.beamgroup(reg,sections=True,colour_opt=True,mix=True,export=True,groups=True)
+
+#GREY SECTIONS
+txtfile += freecad.beamgroup(reg,sections=True)
+
+#GREY SECTIONS ALL GROUPS
+#txtfile += freecad.beamgroup(reg,sections=True,groups=False)
+
+#CENTRELINES
 #txtfile += freecad.beamgroup(reg,sections=False)
-txtfile += freecad.beamgroup(reg,sections=True,colour=True,mix=True)
-
-
-#txtfile += freecad.beamgroup(reg,sections=True)
 
 # pprint(freecad.jointSpheres(reg))
 # txtfile += freecad.jointSpheres(reg)
+
+# JOINTS
 #txtfile += freecad.jointLabels(reg, sections=True)
 
-# txtfile += freecad.jointGen(reg, ['0158'])
+#txtfile += freecad.jointGen(reg, ['0158'])
 #txtfile += freecad.jointGen(reg, stub_len=1)
 #txtfile += ['FreeCAD.ActiveDocument.recompute()']
 

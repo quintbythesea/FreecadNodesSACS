@@ -64,20 +64,23 @@ def jointparser(joint: list, prt=False):
     i = 1
 
     def xE(number: str):
-
         # number.strip() or 0
-        if '-' not in number[1:6]:
+        if '-' not in number.strip()[1:]:
+            #print (number,number[1:6])
             return number.strip() or 0
         else:
-            return '0.'
+            #return '0.'
+            return 0
 
     df = list()
 
     for line in joint:
+        if prt:
+            print (line)
         if len(line.split()) > 4 and line[0] != '*':
             if prt:
-                print('node:', line[6:10], ', X', line[12:19], ', Y', line[19:25], ', Z', line[25:32], sep=' ')
-                print('node:', line[6:10], ', Xf', xE(line[32:39]), ', Yf', xE(line[39:47]), ', Zf', xE(line[47:56]),
+                print('node:', line[6:10], ', X', line[11:18], ', Y', line[18:25], ', Z', line[25:32], sep=' ')
+                print('node:', line[6:10], ', Xf', xE(line[32:39]), ', Yf', xE(line[39:46]), ', Zf', xE(line[46:53]),
                       sep=' ')
 
             node = line[6:10].strip()
@@ -85,7 +88,9 @@ def jointparser(joint: list, prt=False):
             y = float(line[18:25]) + float(xE(line[39:46])) * 0.01
             z = float(line[25:32]) + float(xE(line[46:53])) * 0.01
 
-            df.append([node, round(x, 2), round(y, 2), round(z, 2)])
+            #df.append([node, round(x, 2), round(y, 2), round(z, 2)])
+            #df.append([node, round(x, 6), round(y, 6), round(z, 6)])
+            df.append([node, round(x, 4), round(y, 4), round(z, 4)])
 
             i += 1
 
@@ -118,7 +123,7 @@ def sectparser(sect: list, prt=False):
                 if prt:
                     print('Section', name, 'Type:', sectype, sep=' ')
                     print('Height', height, 'Width:', width, 'th:', th, sep=' ')
-                members.RecSection(name, height, th)
+                members.RecSection(name, height,width,th)
                 # df.append([name, sectype, D0, th])
 
             # IBeams
@@ -242,7 +247,7 @@ def process_sacsin(sacsin_file: str):
 
     # Populate Class Points
     # 1print (joint)
-    for line in jointparser(joint):
+    for line in jointparser(joint,True):
         members.Point(line[0], line[1], line[2], line[3])
 
     # Populate Groups Dictionary
@@ -400,7 +405,7 @@ def weightreport(dict_groups: dict, groupsel=False, export=False):
 
 groups = process_sacsin(sacsin)
 
-# weightgroup(groups,groupsel=[BR1 HSP JLT LG1 LTR P10 PAD POU SLE TEE VP YK2],export=True)
-# weightreport(groups, export=True)
+#weightgroup(groups,groupsel=[BR1 HSP JLT LG1 LTR P10 PAD POU SLE TEE VP YK1 YK2],export=True)
+weightreport(groups, export=True)
 # weightTubes(groups, export=True)
 # print (members.reg)

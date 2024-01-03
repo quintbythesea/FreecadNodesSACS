@@ -2,11 +2,13 @@ import pandas as pd
 
 # --------------------------------------------INPUTS
 # Txt input file name from FreeCAD
-inputFile = 'Auxi'
+inputFile = 'AuxiTable'
 # Initial numbering for nodes
 initialNode = 0
 # Node First letters
-fl = 'AX'
+fl = 'P2'
+# Calibration vector Freecad to SACS [mm]
+dpos = [-0.755,0,0]
 # --------------------------------------------INPUTS
 
 txtPath = 'C:\\Users\\SAFCO108791\\Desktop\\' + inputFile + '.txt'
@@ -35,7 +37,8 @@ print(df.to_markdown(index=False, tablefmt='simple_grid', floatfmt=".3f"))
 
 # print(df.to_markdown())
 
-auxi = [[round(x, 3) for x in line] for line in pointList]
+
+auxi = [[round(x+y, 3) for x,y in zip(line,dpos)] for line in pointList]
 SACSint = [[int(item) for item in line] for line in auxi]
 SACSfrac = [[round((x - y) * 100, 3) for x, y in zip(line1, line2)] for line1, line2 in zip(auxi, SACSint)]
 
